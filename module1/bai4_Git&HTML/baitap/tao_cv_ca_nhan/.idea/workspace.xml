@@ -21,6 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="3c827d7b-d47f-4bca-8018-a2f79942fc15" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../Tao_form_don_gian/.idea/Tao_form_don_gian.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tao_form_don_gian/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tao_form_don_gian/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tao_form_don_gian/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tao_form_don_gian/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/tao_cv_ca_nhan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style_cv_ca_nhan.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tao_cv_ca_nhan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1627805996093</updated>
       <workItem from="1627805997554" duration="2811000" />
+      <workItem from="1627810589948" duration="18000" />
+      <workItem from="1627828840020" duration="1879000" />
     </task>
     <servers />
   </component>
@@ -79,6 +92,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627806213470">
