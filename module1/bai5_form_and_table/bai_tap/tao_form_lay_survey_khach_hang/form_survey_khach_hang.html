@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Survey Khách Hàng</title>
+</head>
+<body>
+<form action="form_survey_khach_hang.html">
+    <h2>Market Research Survey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <br>
+    <p> <strong> What is your age range? </strong> </p>
+    <select >
+        <option>18-24</option>
+    </select>
+    <p> <strong> What is your yearly income range? </strong> </p>
+    <select >
+        <option>$0 - $25,000</option>
+    </select>
+    <p><strong>Gender</strong></p>
+    <input type="radio" name="r_gender"> Male
+    <input type="radio" name="r_gender"> Female
+    <br>
+    <p><strong>Which of the following products have your purchased in the last 2 months. Please check all that apply</strong></p>
+    <input type="checkbox" name="cb_product" > Product 1 <br>
+    <input type="checkbox" name="cb_product"> Product 2 <br>
+    <input type="checkbox" name="cb_product"> Product 3
+    <br>
+    <p><strong>How often would you use for the new product?</strong></p>
+    <input type="radio" name="r_new_product"> Daily <br>
+    <input type="radio" name="r_new_product"> Weekly <br>
+    <input type="radio" name="r_new_product"> Monthly
+    <br>
+    <p><strong>What would you pay for the new product</strong></p>
+    <p>$ <input type="text">.<input type="text"></p>
+    <p>Dollar Cents</p>
+    <p><strong>What features would you like to see in the new product.</strong></p>
+    <textarea cols="100" rows="10"></textarea>
+    <p>Please rate your level of agreement with the following statements.</p>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+        </tr>
+        <tr>
+            <th>Our products are priced fairly</th>
+            <td><input type="radio" name="r_fairly">1</td>
+            <td><input type="radio" name="r_fairly">2</td>
+            <td><input type="radio" name="r_fairly">3</td>
+        </tr>
+        <tr>
+            <th>Our products are high quality</th>
+            <td><input type="radio" name="r_quality">1</td>
+            <td><input type="radio" name="r_quality">2</td>
+            <td><input type="radio" name="r_quality">3</td>
+        </tr>
+        <tr>
+            <th>You would recommend our product to a friend or coworker</th>
+            <td><input type="radio" name="r_recommend">1</td>
+            <td><input type="radio" name="r_recommend">2</td>
+            <td><input type="radio" name="r_recommend">3</td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
