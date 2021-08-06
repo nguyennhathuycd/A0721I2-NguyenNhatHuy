@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <style>
+        body{
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        table{
+            width: 100%;
+        }
+        td{
+            padding: 10px;
+            text-align: center;
+        }
+        input{
+            width: 200px;
+            height: 20px;
+        }
+        select{
+            width: 150px;
+            height: 30px;
+        }
+        button{
+            width: 70px;
+            height: 30px;
+            color: white;
+            background-color: darkviolet;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="ip_amount">
+        </td>
+        <td>
+            <select id="sl_form_currency">
+                <option value="VietNam">Việt Nam</option>
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="sl_to_currency">
+                <option >USD</option>
+                <option value="VietNam" >Việt Nam</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="convert()">Convert</button>
+        </td>
+    </tr>
+</table>
+<script src="convert.js"></script>
+</body>
+</html>
