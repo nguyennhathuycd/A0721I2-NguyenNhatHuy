@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h1>A có chia hết cho B hay không?</h1>
+    Nhập A: <input type="text" id="a"> <br>
+    Nhập B: <input type="text" id="b"> <br>
+    <input type="button" value="Kiểm tra" onclick="check()"> <br>
+    Result: <text id="result"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let a = parseInt(document.getElementById('a').value);
+        let b = parseInt(document.getElementById('b').value);
+        if (a != null && b!= null && typeof a == "number" && typeof b == "number"){
+            if (a % b == 0){
+                document.getElementById('result').innerHTML = 'A chia hết cho B';
+            } else {
+                document.getElementById('result').innerHTML = 'A không chia hết cho B';
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Fast Cheap</title>
+</head>
+<body>
+<input type="radio" id="good" value="Good" onclick="check(1)"> Good
+<input type="radio" id="cheap" value="Cheap" onclick="check(2)"> Cheap
+<input type="radio" id="fast" value="Fast" onclick="check(3)"> Fast
+</body>
+
+<script>
+    function check(option) {
+        if (option == 1 && document.getElementById('cheap').checked && document.getElementById('fast').checked){
+            document.getElementById('cheap').checked = false;
+        }
+        if (option == 2 && document.getElementById('good').checked && document.getElementById('fast').checked){
+            document.getElementById('fast').checked = false;
+        }
+        if (option == 3 && document.getElementById('cheap').checked && document.getElementById('good').checked){
+            document.getElementById('good').checked = false;
+        }
+    }
+</script>
+</html>
