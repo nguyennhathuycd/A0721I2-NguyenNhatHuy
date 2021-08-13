@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cạnh của một tam giác</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Kiểm tra cạnh của một tam giác</h2>
+    Nhập a: <input type="text" id="ip_CanhTG_a"> <br>
+    Nhập b: <input type="text" id="ip_CanhTG_b"> <br>
+    Nhập c: <input type="text" id="ip_CanhTG_c"> <br>
+    <input type="button" onclick="check()" value="Kiểm tra"> <br>
+    <text id="t_CanhTG"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let a = parseFloat(document.getElementById('ip_CanhTG_a').value);
+        let b = parseFloat(document.getElementById('ip_CanhTG_b').value);
+        let c = parseFloat(document.getElementById('ip_CanhTG_c').value);
+        if (a > 0 && b > 0 && c > 0 && a + b >c && a + c > b && b + c > a){
+            document.getElementById('t_CanhTG').innerHTML = `${a}, ${b}, ${c} là cạnh của một tam giác.`;
+        } else {
+            document.getElementById('t_CanhTG').innerHTML = `${a}, ${b}, ${c} không phải là cạnh của một tam giác.`;
+        }
+    }
+</script>
+</html>

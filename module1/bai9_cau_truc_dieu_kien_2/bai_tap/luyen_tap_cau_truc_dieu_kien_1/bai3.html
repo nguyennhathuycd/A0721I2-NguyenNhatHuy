@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Số Lớn Hay Nhỏ Hơn 0</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h1>Kiểm Tra Số Lớn Hay Nhỏ Hơn 0</h1> <br>
+    Nhập một số: <input type="text" id="ip_nhap"> <br>
+    <input type="button" id="ip_kiemtra" value="Kiểm tra" onclick="check()"> <br>
+    <text id="txt_result"></text>
+</form>
+<script>
+    function check(){
+        let number = parseInt(document.getElementById('ip_nhap').value);
+        if (number > 0){
+            document.getElementById('txt_result').innerHTML = number + ' là số lớn hơn 0';
+        } else if (number < 0){
+            document.getElementById('txt_result').innerHTML = number + ' là số bé hơn 0';
+        } else{
+            document.getElementById('txt_result').innerHTML = 'Bằng 0';
+        }
+    }
+</script>
+</body>
+</html>

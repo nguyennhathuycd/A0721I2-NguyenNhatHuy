@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Hoa Hồng</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính hoa hồng</h2>
+    Nhập doanh số bán hàng: <input type="text" id="ip_DoanhSo"> <br>
+    <input type="button" value="Kiểm tra" onclick="check()"> <br>
+    <text id="txt_DoanhSo"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let doanhSo = parseInt(document.getElementById('ip_DoanhSo').value);
+        if (doanhSo >= 2000){
+            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 2,000,000 VNĐ";
+        } else if (doanhSo >= 1000){
+            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 1,000,000 VNĐ";
+        } else if (doanhSo >= 500){
+            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 500,000 trăm VNĐ";
+        } else if (doanhSo >= 100){
+            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 100,000 trăm VNĐ";
+        } else {
+            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Bạn không có tiền hoa hồng";
+        }
+    }
+</script>
+</html>

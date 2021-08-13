@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính thuế thu nhập cá nhân</h2>
+    Thu nhập tính thuế TNCN (tháng): <input type="text" id="ip_ThuNhap"> <br>
+    <input type="button" onclick="check()" value="Tính thuế"> <br>
+    <text id="t_TienThue"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let thuNhap = parseInt(document.getElementById('ip_ThuNhap').value);
+        let tienThue;
+        if (thuNhap <= 5000000){
+            tienThue = thuNhap * 5 / 100;
+        } else if (thuNhap <= 10000000) {
+            tienThue = thuNhap * 10 / 100;
+        } else if (thuNhap <= 18000000){
+            tienThue = thuNhap * 15 / 100;
+        } else if (thuNhap <= 32000000){
+            tienThue = thuNhap * 20 / 100;
+        } else if (thuNhap <= 52000000){
+            tienThue = thuNhap * 25 / 100;
+        }else if (thuNhap <= 80000000) {
+            tienThue = thuNhap * 30 / 100;
+        } else {
+            tienThue = thuNhap * 35 / 100;
+        }
+        document.getElementById('t_TienThue').innerHTML = `Tiền thuế của bạn là: ${tienThue} vnđ`;
+    }
+</script>
+</html>

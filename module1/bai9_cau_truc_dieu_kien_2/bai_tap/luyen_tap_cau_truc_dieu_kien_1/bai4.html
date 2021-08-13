@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Số Lớn Nhất Trong 3 Số</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h2>Số lớn nhất trong 3 số</h2>
+    Nhập số thứ nhất: <input type="text" id="txt_soThuNhat"> <br>
+    Nhập số thứ hai: <input type="text" id="txt_soThuHai"> <br>
+    Nhập số thứ ba: <input type="text" id="txt_soThuBa"> <br>
+    <input type="button" value="Kiểm tra" onclick="check()"> <br>
+    <text id="txt_ketQua"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let number1 = parseInt(document.getElementById('txt_soThuNhat').value);
+        let number2 = parseInt(document.getElementById('txt_soThuHai').value);
+        let number3 = parseInt(document.getElementById('txt_soThuBa').value);
+        if (number1 > number2 && number1 > number3){
+            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number1} là số lớn nhất`;
+        } else if (number2 > number1 && number2 > number3){
+            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number2} là số lớn nhất`;
+        } else {
+            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number3} là số lớn nhất`;
+        }
+    }
+</script>
+</html>

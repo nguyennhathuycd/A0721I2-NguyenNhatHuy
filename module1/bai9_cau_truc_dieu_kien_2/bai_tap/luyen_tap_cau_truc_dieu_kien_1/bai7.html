@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Cước Điện Thoại</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính cước điện thoại</h2>
+    Nhập thời gian gọi (giây): <input type="text" id="ip_ThoiGianGoi"> <br>
+    <input type="button" value="Kiểm tra" onclick="check()"> <br>
+    <text id="t_CuocDienThoai"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let thoiGianGoi = parseFloat(document.getElementById('ip_ThoiGianGoi').value);
+        let cuocDienThoai = Math.round((thoiGianGoi * 1650 / 60)*100)/100;
+        document.getElementById('t_CuocDienThoai').innerHTML = `Cước điện thoại của bạn là ${cuocDienThoai} vnđ`;
+    }
+</script>
+</html>

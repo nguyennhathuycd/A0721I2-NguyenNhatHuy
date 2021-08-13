@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp Loại Học Lực</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h2>Xếp loại học lực</h2>
+    <h3>Nhập điểm:</h3>
+    Điểm thực hành: <input type="text" id="ip_DiemThucHanh"> <br>
+    Điểm giữa kỳ  : <input type="text" id="ip_DiemGiuaKy"> <br>
+    Điểm cuối kỳ  : <input type="text" id="ip_DiemCuoiKy"> <br>
+    <input type="button" value="Kiểm tra" onclick="check()"> <br>
+    <text id="txt_XepLoai"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let diemThucHanh = parseFloat(document.getElementById('ip_DiemThucHanh').value);
+        let diemGiuaKy = parseFloat(document.getElementById('ip_DiemGiuaKy').value);
+        let diemCuoiKy = parseFloat(document.getElementById('ip_DiemCuoiKy').value);
+        let result = (diemGiuaKy + diemCuoiKy + diemThucHanh) / 3;
+        if (result >= 8.0){
+            document.getElementById('txt_XepLoai').innerHTML = `Kết quả: Bạn được xếp loại học sinh giỏi. ĐTB = ${result}`;
+        } else if (result >= 6){
+            document.getElementById('txt_XepLoai').innerHTML = `Kết quả: Bạn được xếp loại học sinh khá. ĐTB = ${result}`;
+        } else if (result >= 4){
+            document.getElementById('txt_XepLoai').innerHTML = `Kết quả: Bạn được xếp loại học sinh trung bình. ĐTB = ${result}`;
+        } else {
+            document.getElementById('txt_XepLoai').innerHTML = `Kết quả: Bạn được xếp loại học sinh ở lại. ĐTB = ${result}`;
+        }
+    }
+</script>
+</html>

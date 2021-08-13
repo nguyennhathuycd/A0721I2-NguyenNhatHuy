@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển độ C sang độ F</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Chuyển từ độ C sang độ F</h2>
+    Nhập độ C: <input type="text" id="ip_DoC"><br>
+    <input type="button" value="Chuyển đổi" onclick="chuyenDoi()"><br>
+    <text id="t_DoF"></text>
+</form>
+</body>
+<script>
+    function chuyenDoi() {
+        let doC = parseFloat(document.getElementById('ip_DoC').value);
+        let doF = doC * 9/5 + 32;
+        document.getElementById('t_DoF').innerHTML = `Độ F: ${doF}`;
+    }
+</script>
+</html>

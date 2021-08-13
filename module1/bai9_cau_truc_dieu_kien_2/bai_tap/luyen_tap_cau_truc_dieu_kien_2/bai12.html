@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính lãi ngân hàng</h2>
+    Số tiền ban đầu    : <input type="text" id="ip_TienBanDau"> <br>
+    Số tháng cho vay   : <input type="text" id="ip_thang"> <br>
+    Lãi xuất hàng tháng (% / năm): <input type="text" id="ip_LaiXuat"> <br>
+    <input type="button" onclick="check()" value="Tính lãi"> <br>
+    <text id="t_TienLai"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let tienBanDau = document.getElementById('ip_TienBanDau').value;
+        let thang = document.getElementById('ip_thang').value;
+        let laiXuat = document.getElementById('ip_LaiXuat').value;
+        let tienLai = (tienBanDau * laiXuat / 100 / 12 * thang);
+        document.getElementById('t_TienLai').innerHTML = `Tiền lãi của bạn là: ${tienLai} vnđ`;
+    }
+</script>
+</html>

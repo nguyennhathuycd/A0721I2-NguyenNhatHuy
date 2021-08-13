@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Giải phương trình bậc 2: Ax<sup>2</sup> + By + C = 0</h2>
+    Nhập A: <input type="text" id="ip_so_A"><br>
+    Nhập B: <input type="text" id="ip_so_B"><br>
+    Nhập C: <input type="text" id="ip_so_C"><br>
+    <input type="button" value="Tính toán" onclick="tinhPTBac2()"><br>
+    <text id="t_PTBac2"></text>
+</form>
+</body>
+<script>
+    function tinhPTBac2() {
+        let A = parseFloat(document.getElementById('ip_so_A').value);
+        let B = parseFloat(document.getElementById('ip_so_B').value);
+        let C = parseFloat(document.getElementById('ip_so_C').value);
+        if (A == 0) {
+            if (B == 0) {
+                if (C == 0) {
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình vô số nghiệm`;
+                } else {
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
+                }
+            } else {
+                let ketQua = Math.round((-C / B) * 100) / 100;
+                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm duy nhất x = ${ketQua}`;
+            }
+        } else {
+            let delta = B*B-4*A*C;
+            if (delta < 0){
+                document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
+            } else if (delta == 0){
+                let nghiemKep = Math.round((-B/(2*A))*100)/100;
+                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm kép x1 = x2 = ${nghiemKep}`;
+            } else {
+                let x1 = Math.round((((-B + Math.sqrt(delta)) / (2*A))*100)/100);
+                let x2 =Math.round((((-B - Math.sqrt(delta))/(2*A))*100)/100) ;
+                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 2 nghiệm x1 = ${x1}, x2 = ${x2}`;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích tam giác vuông</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Diện tích tam giác vuông</h2>
+    Nhập cạnh a: <input type="text" id="ip_CanhKe_a"><br>
+    Nhập cạnh b: <input type="text" id="ip_CanhKe_b"><br>
+    <input type="button" value="Tính toán" onclick="tinhDienTichTGV()"><br>
+    <text id="t_DienTichTGV"></text>
+</form>
+</body>
+<script>
+    function tinhDienTichTGV() {
+        let a = parseFloat(document.getElementById('ip_CanhKe_a').value);
+        let b = parseFloat(document.getElementById('ip_CanhKe_b').value);
+        let dienTichTGV = Math.round((1 / 2 * a * b)*100)/100;
+        document.getElementById('t_DienTichTGV').innerHTML = `Diện tích : ${dienTichTGV}`;
+    }
+</script>
+</html>

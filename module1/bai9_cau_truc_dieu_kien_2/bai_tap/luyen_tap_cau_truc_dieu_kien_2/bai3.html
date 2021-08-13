@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình vuông</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Diện tích hình vuông</h2>
+    Nhập cạnh a: <input type="text" id="ip_a"><br>
+    <input type="button" value="Tính toán" onclick="tinhDienTich()"><br>
+    <text id="t_DienTich"></text>
+</form>
+</body>
+<script>
+    function tinhDienTich() {
+        let a = parseFloat(document.getElementById('ip_a').value);
+        let dienTich = Math.round((a * a)*100)/100;
+        document.getElementById('t_DienTich').innerHTML = `Diện tích : ${dienTich}`;
+    }
+</script>
+</html>

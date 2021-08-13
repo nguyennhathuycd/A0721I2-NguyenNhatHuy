@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tuổi</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Kiểm tra tuổi</h2>
+    Nhập tuổi: <input type="text" id="ip_tuoi"> <br>
+    <input type="button" onclick="check()" value="Kiểm tra"> <br>
+    <text id="t_tuoi"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let tuoi = document.getElementById('ip_tuoi').value;
+        if (tuoi % 1 == 0 && tuoi > 0 && tuoi < 120){
+            document.getElementById('t_tuoi').innerHTML = `${tuoi} là tuổi của một người.`;
+        } else {
+            document.getElementById('t_tuoi').innerHTML = `${tuoi} không phải là tuổi của một người.`;
+        }
+    }
+</script>
+</html>
