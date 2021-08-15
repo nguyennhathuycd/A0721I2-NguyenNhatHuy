@@ -20,10 +20,14 @@
 <script>
     function check() {
         let tuoi = document.getElementById('ip_tuoi').value;
-        if (tuoi % 1 == 0 && tuoi > 0 && tuoi < 120){
-            document.getElementById('t_tuoi').innerHTML = `${tuoi} là tuổi của một người.`;
+        if (isNaN(tuoi)){
+            alert(`Error!`);
         } else {
-            document.getElementById('t_tuoi').innerHTML = `${tuoi} không phải là tuổi của một người.`;
+            if (tuoi % 1 == 0 && tuoi > 0 && tuoi < 120){
+                document.getElementById('t_tuoi').innerHTML = `${tuoi} là tuổi của một người.`;
+            } else {
+                document.getElementById('t_tuoi').innerHTML = `${tuoi} không phải là tuổi của một người.`;
+            }
         }
     }
 </script>

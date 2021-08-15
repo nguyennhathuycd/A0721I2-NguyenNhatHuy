@@ -19,11 +19,16 @@
 <script>
     function check(){
         let tuoi = parseInt(document.getElementById("tuoi").value);
-        if (tuoi >= 15){
-            document.getElementById("result").innerHTML = 'Bạn đã đủ tuổi vào lớp 10';
+        if (!isNaN(tuoi)){
+            if (tuoi >= 15){
+                document.getElementById("result").innerHTML = 'Bạn đã đủ tuổi vào lớp 10';
+            } else {
+                document.getElementById("result").innerHTML = 'Bạn chưa đủ tuổi vào lớp 10';
+            }
         } else {
-            document.getElementById("result").innerHTML = 'Bạn chưa đủ tuổi vào lớp 10';
+            alert(`Error!`);
         }
+
     }
 </script>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberBefore = 1;
+    let numberAfter = 1;
+    let sum = 2;
+    let count = 2;
+    let temp = null;
+    while (count <= 20){
+        sum = numberBefore + numberAfter;
+        temp = numberBefore;
+        numberBefore = numberAfter;
+        numberAfter = temp + numberAfter;
+        count++;
+    }
+    document.write(`Tổng của 20 sô đầu trong dãy fibonacci: ${sum}`);
+</script>
+</html>

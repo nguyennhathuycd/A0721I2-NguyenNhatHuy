@@ -21,32 +21,37 @@
     function check() {
         let soDien = parseFloat(document.getElementById('ip_SoDien').value);
         let tienDien = 0;
-        if (soDien > 50) {
-            tienDien = 1678 * 50;
-            soDien = soDien - 50;
+        if (isNaN(soDien)){
+            alert(`Error!`);
+        } else {
             if (soDien > 50) {
-                tienDien = tienDien + 1734 * 50;
+                tienDien = 1678 * 50;
                 soDien = soDien - 50;
-                if (soDien > 100) {
-                    tienDien = tienDien + 2014 * 100;
-                    soDien = soDien - 100;
+                if (soDien > 50) {
+                    tienDien = tienDien + 1734 * 50;
+                    soDien = soDien - 50;
                     if (soDien > 100) {
-                        tienDien = tienDien + 2536 * 100;
+                        tienDien = tienDien + 2014 * 100;
                         soDien = soDien - 100;
-                        tienDien = tienDien + 2834 * soDien;
+                        if (soDien > 100) {
+                            tienDien = tienDien + 2536 * 100;
+                            soDien = soDien - 100;
+                            tienDien = tienDien + 2834 * soDien;
+                        } else {
+                            tienDien = tienDien + 2536 * soDien;
+                        }
                     } else {
-                        tienDien = tienDien + 2536 * soDien;
+                        tienDien = tienDien + 2014 * soDien;
                     }
                 } else {
-                    tienDien = tienDien + 2014 * soDien;
+                    tienDien = tienDien + 1734 * soDien;
                 }
             } else {
-                tienDien = tienDien + 1734 * soDien;
+                tienDien = 1678 * soDien;
             }
-        } else {
-            tienDien = 1678 * soDien;
+            document.getElementById('t_TienDien').innerHTML = `Tiền điện của bạn là: ${tienDien} vnđ`;
         }
-        document.getElementById('t_TienDien').innerHTML = `Tiền điện của bạn là: ${tienDien} vnđ`;
     }
+
 </script>
 </html>

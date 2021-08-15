@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberBefore = 1;
+    let numberAfter = 1;
+    let temp = null;
+    while (1){
+        if ((numberBefore + numberAfter) % 5 == 0){
+            break;
+        } else {
+            temp = numberBefore;
+            numberBefore = numberAfter;
+            numberAfter = temp + numberAfter;
+        }
+    }
+    document.write(`Số đầu tiên trong dãy fibonacci chia hết cho 5: ${numberBefore + numberAfter}`);
+</script>
+</html>

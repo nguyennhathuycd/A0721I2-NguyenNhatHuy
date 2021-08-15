@@ -21,11 +21,16 @@
 </body>
 <script>
     function check() {
-        let tienBanDau = document.getElementById('ip_TienBanDau').value;
-        let thang = document.getElementById('ip_thang').value;
-        let laiXuat = document.getElementById('ip_LaiXuat').value;
-        let tienLai = (tienBanDau * laiXuat / 100 / 12 * thang);
-        document.getElementById('t_TienLai').innerHTML = `Tiền lãi của bạn là: ${tienLai} vnđ`;
+        let tienBanDau = parseInt(document.getElementById('ip_TienBanDau').value);
+        let thang = parseInt(document.getElementById('ip_thang').value);
+        let laiXuat = parseFloat(document.getElementById('ip_LaiXuat').value);
+        if (isNaN(tienBanDau) || isNaN(thang) || isNaN(laiXuat)){
+            alert(`Error`);
+        } else {
+            let tienLai = (tienBanDau * laiXuat / 100 / 12 * thang);
+            document.getElementById('t_TienLai').innerHTML = `Tiền lãi của bạn là: ${tienLai} vnđ`;
+        }
     }
+
 </script>
 </html>

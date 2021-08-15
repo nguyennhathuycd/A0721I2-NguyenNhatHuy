@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let text='';
+    let sum = 0;
+    let count = 0;
+    for (let i = 1; count < 30; i++){
+        if (i % 7 == 0){
+            count++;
+            sum+=i;
+            text += `${i} + `;
+        }
+    }
+    text = text.substring(0,text.length-2);
+    document.write(`Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên:<br>${text}= ${sum}`);
+</script>
+</html>

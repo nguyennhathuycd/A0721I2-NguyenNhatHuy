@@ -24,12 +24,16 @@
         let number1 = parseInt(document.getElementById('txt_soThuNhat').value);
         let number2 = parseInt(document.getElementById('txt_soThuHai').value);
         let number3 = parseInt(document.getElementById('txt_soThuBa').value);
-        if (number1 > number2 && number1 > number3){
-            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number1} là số lớn nhất`;
-        } else if (number2 > number1 && number2 > number3){
-            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number2} là số lớn nhất`;
+        if (isNaN(number1) || isNaN(number2) || isNaN(number3)){
+            alert(`Error!`)
         } else {
-            document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number3} là số lớn nhất`;
+            if (number1 > number2 && number1 > number3){
+                document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number1} là số lớn nhất`;
+            } else if (number2 > number1 && number2 > number3){
+                document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number2} là số lớn nhất`;
+            } else {
+                document.getElementById('txt_ketQua').innerHTML = `Kết quả: ${number3} là số lớn nhất`;
+            }
         }
     }
 </script>

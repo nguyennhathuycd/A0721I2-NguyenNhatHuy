@@ -20,16 +20,20 @@
 <script>
     function check() {
         let doanhSo = parseInt(document.getElementById('ip_DoanhSo').value);
-        if (doanhSo >= 2000){
-            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 2,000,000 VNĐ";
-        } else if (doanhSo >= 1000){
-            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 1,000,000 VNĐ";
-        } else if (doanhSo >= 500){
-            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 500,000 trăm VNĐ";
-        } else if (doanhSo >= 100){
-            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 100,000 trăm VNĐ";
+        if (!isNaN(doanhSo)){
+            if (doanhSo >= 2000){
+                document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 2,000,000 VNĐ";
+            } else if (doanhSo >= 1000){
+                document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 1,000,000 VNĐ";
+            } else if (doanhSo >= 500){
+                document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 500,000 trăm VNĐ";
+            } else if (doanhSo >= 100){
+                document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Tiền hoa hông của bạn là 100,000 trăm VNĐ";
+            } else {
+                document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Bạn không có tiền hoa hồng";
+            }
         } else {
-            document.getElementById('txt_DoanhSo').innerHTML = "Kết quả: Bạn không có tiền hoa hồng";
+            alert(`Error!`);
         }
     }
 </script>

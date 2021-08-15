@@ -21,7 +21,11 @@
     function chuyenDoi() {
         let doC = parseFloat(document.getElementById('ip_DoC').value);
         let doF = doC * 9/5 + 32;
-        document.getElementById('t_DoF').innerHTML = `Độ F: ${doF}`;
+        if (isNaN(doC)){
+            alert(`Error!`);
+        } else {
+            document.getElementById('t_DoF').innerHTML = `Độ F: ${doF}`;
+        }
     }
 </script>
 </html>

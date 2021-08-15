@@ -24,28 +24,32 @@
         let A = parseFloat(document.getElementById('ip_so_A').value);
         let B = parseFloat(document.getElementById('ip_so_B').value);
         let C = parseFloat(document.getElementById('ip_so_C').value);
-        if (A == 0) {
-            if (B == 0) {
-                if (C == 0) {
-                    document.getElementById('t_PTBac2').innerHTML = `Phương trình vô số nghiệm`;
+        if (isNaN(A) || isNaN(B) || isNaN(C)){
+            alert(`Error!`);
+        } else {
+            if (A == 0) {
+                if (B == 0) {
+                    if (C == 0) {
+                        document.getElementById('t_PTBac2').innerHTML = `Phương trình vô số nghiệm`;
+                    } else {
+                        document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
+                    }
                 } else {
-                    document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
+                    let ketQua = Math.round((-C / B) * 100) / 100;
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm duy nhất x = ${ketQua}`;
                 }
             } else {
-                let ketQua = Math.round((-C / B) * 100) / 100;
-                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm duy nhất x = ${ketQua}`;
-            }
-        } else {
-            let delta = B*B-4*A*C;
-            if (delta < 0){
-                document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
-            } else if (delta == 0){
-                let nghiemKep = Math.round((-B/(2*A))*100)/100;
-                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm kép x1 = x2 = ${nghiemKep}`;
-            } else {
-                let x1 = Math.round((((-B + Math.sqrt(delta)) / (2*A))*100)/100);
-                let x2 =Math.round((((-B - Math.sqrt(delta))/(2*A))*100)/100) ;
-                document.getElementById('t_PTBac2').innerHTML = `Phương trình có 2 nghiệm x1 = ${x1}, x2 = ${x2}`;
+                let delta = B*B-4*A*C;
+                if (delta < 0){
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình vô nghiệm`;
+                } else if (delta == 0){
+                    let nghiemKep = Math.round((-B/(2*A))*100)/100;
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình có 1 nghiệm kép x1 = x2 = ${nghiemKep}`;
+                } else {
+                    let x1 = Math.round((((-B + Math.sqrt(delta)) / (2*A))*100)/100);
+                    let x2 =Math.round((((-B - Math.sqrt(delta))/(2*A))*100)/100) ;
+                    document.getElementById('t_PTBac2').innerHTML = `Phương trình có 2 nghiệm x1 = ${x1}, x2 = ${x2}`;
+                }
             }
         }
     }

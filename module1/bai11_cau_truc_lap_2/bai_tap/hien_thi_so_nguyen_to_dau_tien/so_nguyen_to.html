@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+</body>
+<script>
+    let result = '';
+    let count = 0;
+    for (let i = 3; count <= 20;i++){
+        let check = 1;
+        for (let j = 2; j < i; j ++){
+            if (i % j == 0){
+                check = -1;
+            }
+        }
+        if (check == 1){
+            result += `${i} `;
+            count ++;
+        }
+    }
+    alert(`20 số nguyên tố đầu tiên: ${result}`);
+</script>
+</html>

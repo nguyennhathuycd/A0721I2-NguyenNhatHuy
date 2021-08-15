@@ -4,30 +4,34 @@
     <meta charset="UTF-8">
     <title>Calculator</title>
     <style>
-        input{
+        input {
             text-align: center;
             margin-bottom: 10px;
             width: 290px;
         }
-        input,button{
+
+        input, button {
             padding: 5px;
+            margin-bottom: 10px;
         }
-        button{
+
+        button {
             width: 150px;
             background-color: darkgray;
         }
     </style>
 </head>
 <body>
-<form action="ung_dung_may_tinh.html">
-    <input type="text" id="ip_number1">
-    <input type="text" id="ip_number2">
-    <br>
-    <button onclick="addition()">Addition(+)</button>
-    <button onclick="subtraction()">Subtraction(-)</button>
-    <button onclick="multiplication()">Multiplication(X)</button>
-    <button onclick="divsion()">Divsion(/)</button>
-</form>
+<input type="text" id="ip_number1">
+<input type="text" id="ip_number2">
+<br>
+<button onclick="addition()">Addition(+)</button>
+<button onclick="subtraction()">Subtraction(-)</button>
+<button onclick="multiplication()">Multiplication(X)</button>
+<button onclick="divsion()">Divsion(/)</button>
+<br>
+<text>Kết quả:</text>
+<input type="text" id="ip_KetQua">
 </body>
 <script src="calculater.js"></script>
 </html>

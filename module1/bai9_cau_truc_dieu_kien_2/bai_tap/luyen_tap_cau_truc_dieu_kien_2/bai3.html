@@ -21,7 +21,11 @@
     function tinhDienTich() {
         let a = parseFloat(document.getElementById('ip_a').value);
         let dienTich = Math.round((a * a)*100)/100;
-        document.getElementById('t_DienTich').innerHTML = `Diện tích : ${dienTich}`;
+        if (isNaN(a)){
+            alert(`Error!`);
+        } else {
+            document.getElementById('t_DienTich').innerHTML = `Diện tích : ${dienTich}`;
+        }
     }
 </script>
 </html>

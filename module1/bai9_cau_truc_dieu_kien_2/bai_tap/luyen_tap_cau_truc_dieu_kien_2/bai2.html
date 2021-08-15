@@ -21,7 +21,11 @@
     function chuyenDoi() {
         let met = parseFloat(document.getElementById('ip_met').value);
         let feet = Math.round((met * 3.2802)*100)/100;
-        document.getElementById('t_feet').innerHTML = `Feet : ${feet}`;
+        if (isNaN(met)){
+            alert(`Error!`);
+        } else {
+            document.getElementById('t_feet').innerHTML = `Feet : ${feet}`;
+        }
     }
 </script>
 </html>

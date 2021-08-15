@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính tổng các phần tử từ 1</h2>
+    Nhập số: <input type="text" id="ip_so"> <br>
+    <input type="button" value="Tính toán" onclick="tong()"> <br>
+    <text id="t_tong"></text>
+</form>
+</body>
+<script>
+    function tong() {
+        let so = document.getElementById('ip_so').value;
+        let tong = 0;
+        if (so > 0){
+            for (var i = 1; i <= so; i++){
+                tong += i;
+            }
+            document.getElementById('t_tong').innerHTML = `Tổng các số từ 1 đến ${so} là: ${tong}`;
+        } else {
+            alert('Nhập số lớn hơn 0');
+        }
+
+    }
+</script>
+</html>

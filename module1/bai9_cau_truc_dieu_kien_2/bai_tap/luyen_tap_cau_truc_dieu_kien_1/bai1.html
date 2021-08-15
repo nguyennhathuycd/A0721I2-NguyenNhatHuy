@@ -22,12 +22,14 @@
     function check() {
         let a = parseInt(document.getElementById('a').value);
         let b = parseInt(document.getElementById('b').value);
-        if (a != null && b!= null && typeof a == "number" && typeof b == "number"){
+        if (!isNaN(a) && !isNaN(b) && typeof a == "number" && typeof b == "number"){
             if (a % b == 0){
                 document.getElementById('result').innerHTML = 'A chia hết cho B';
             } else {
                 document.getElementById('result').innerHTML = 'A không chia hết cho B';
             }
+        } else {
+            alert('Error!');
         }
     }
 </script>

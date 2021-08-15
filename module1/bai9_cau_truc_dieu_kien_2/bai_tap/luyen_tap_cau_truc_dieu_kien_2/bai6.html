@@ -22,15 +22,19 @@
     function tinhPTBac1() {
         let A = parseFloat(document.getElementById('ip_SoA').value);
         let B = parseFloat(document.getElementById('ip_SoB').value);
-        if (A == 0){
-            if (B == 0){
-                document.getElementById('t_PTBac1').innerHTML = `Phương trình vô số nghiệm`;
-            } else {
-                document.getElementById('t_PTBac1').innerHTML = `Phương trình vô nghiệm`;
+        if (isNaN(A) || isNaN(B)){
+            alert(`Error`);
+        } else {
+            if (A == 0){
+                if (B == 0){
+                    document.getElementById('t_PTBac1').innerHTML = `Phương trình vô số nghiệm`;
+                } else {
+                    document.getElementById('t_PTBac1').innerHTML = `Phương trình vô nghiệm`;
+                }
+            } else{
+                let x = Math.round((-B / A)*100)/100;
+                document.getElementById('t_PTBac1').innerHTML = `x = ${x}`;
             }
-        } else{
-            let x = Math.round((-B / A)*100)/100;
-            document.getElementById('t_PTBac1').innerHTML = `x = ${x}`;
         }
     }
 </script>

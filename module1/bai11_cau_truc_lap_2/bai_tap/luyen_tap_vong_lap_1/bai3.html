@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let numberBefore = 1;
+    let numberAfter = 1;
+    let text = `20 số fibonacci đầu tiền: 1, 1, `;
+    let count = 2;
+    let temp = null;
+    while (count <= 20){
+        text += `${numberBefore+numberAfter}, `;
+        temp = numberBefore;
+        numberBefore = numberAfter;
+        numberAfter = temp + numberAfter;
+        count++;
+    }
+    document.write(text);
+</script>
+</html>

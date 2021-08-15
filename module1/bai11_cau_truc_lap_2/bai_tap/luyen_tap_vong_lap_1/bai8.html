@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán xem!</title>
+</head>
+<body>
+<input type="button" value="Chơi" onclick="gameDoanSo()">
+</body>
+<script>
+    function gameDoanSo() {
+        let from = parseInt(prompt('Nhập khoảng bạn muốn đoán số. Khoảng bắt đầu từ:'));
+        let to = parseInt(prompt('Đến:'));
+        let number = Math.floor(Math.random() * (to - from + 1)) + from;
+        let guessNumber;
+        if (!isNaN(from) && !isNaN(to)){
+            alert('Bạn có 8 lần đoán số. Chúc bạn may mắn!')
+            for (let i = 0; i < 8; i++){
+                guessNumber = parseInt(prompt(`Đoán số (${8-i} lượt) (${from} - ${to}):`));
+                if (guessNumber < number){
+                    alert('Số lớn hơn');
+                } else if (guessNumber > number){
+                    alert('Số nhỏ hơn');
+                } else if (guessNumber == number){
+                    alert(`Chúc mừng bạn đã đoán đùng số ${number}`);
+                    break;
+                }
+            }
+        } else {
+            alert('Lỗi!');
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng các số được nhập</title>
+</head>
+<body>
+</body>
+<script>
+        let so = 0;
+        let tong = 0;
+        let text = '';
+        while (so != -1){
+            so = parseFloat(prompt("Nhập vào 1 số: (Nhập -1 để thoát)"));
+            if (so != -1){
+                tong += so;
+                text += `${so} + `;
+            }
+        }
+        text = text.substring(0,text.length-2);
+        text += ` = ${tong}`;
+        alert(text);
+</script>
+</html>

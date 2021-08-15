@@ -23,7 +23,11 @@
         let a = parseFloat(document.getElementById('ip_canh_a').value);
         let b = parseFloat(document.getElementById('ip_canh_b').value);
         let dienTichHCN = Math.round((a * b)*100)/100;
-        document.getElementById('t_DienTichHCN').innerHTML = `Diện tích : ${dienTichHCN}`;
+        if (isNaN(a) || isNaN(b)){
+            alert(`Error!`);
+        } else {
+            document.getElementById('t_DienTichHCN').innerHTML = `Diện tích : ${dienTichHCN}`;
+        }
     }
 </script>
 </html>

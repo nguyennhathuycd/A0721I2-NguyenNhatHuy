@@ -21,7 +21,11 @@
     function check() {
         let thoiGianGoi = parseFloat(document.getElementById('ip_ThoiGianGoi').value);
         let cuocDienThoai = Math.round((thoiGianGoi * 1650 / 60)*100)/100;
-        document.getElementById('t_CuocDienThoai').innerHTML = `Cước điện thoại của bạn là ${cuocDienThoai} vnđ`;
+        if (isNaN(thoiGianGoi)){
+            alert(`Error!`);
+        } else {
+            document.getElementById('t_CuocDienThoai').innerHTML = `Cước điện thoại của bạn là ${cuocDienThoai} vnđ`;
+        }
     }
 </script>
 </html>
