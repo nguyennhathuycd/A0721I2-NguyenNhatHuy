@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tính giai thừa của một số dương</h2>
+    <text>Nhập số dương: </text>
+    <input type="text" id="ip_SoDuong"> <br>
+    <input type="button" value="Tính" onclick="tinhGiaiThua()"> <br>
+    <text id="t_KetQua"></text>
+</form>
+</body>
+<script>
+    function tinhGiaiThua() {
+        let soDuong = parseFloat(document.getElementById(`ip_SoDuong`).value);
+        if (isNaN(soDuong)){
+            alert(`Error!`);
+        } else if (soDuong <= 0){
+            alert(`Error!`);
+        } else if (soDuong % 1 == 0) {
+            let ketQua = 1;
+            for (let i = 1; i <= soDuong; i++){
+                ketQua *= i;
+            }
+            document.getElementById(`t_KetQua`).innerHTML = `Kết quả: ${ketQua}`;
+        } else {
+            alert(`Hãy nhập số nguyên dương.`);
+        }
+    }
+</script>
+</html>

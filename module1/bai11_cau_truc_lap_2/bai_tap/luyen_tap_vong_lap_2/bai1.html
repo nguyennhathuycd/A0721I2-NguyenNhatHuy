@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonacci</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h2>Tìm n số Fibonacci đầu tiên</h2>
+    <text>Nhập n:</text>
+    <input type="text" id="ip_FibonacciNumber"> <br>
+    <input type="button" value="Tìm" onclick="fibonacci()"> <br>
+    <text id="t_output"></text>
+</form>
+</body>
+<script>
+    function fibonacci() {
+        let fibonacciNumber = parseInt(document.getElementById(`ip_FibonacciNumber`).value);
+        if (isNaN(fibonacciNumber)) {
+            alert(`Error!`);
+        } else {
+            let text = ``;
+            if (fibonacciNumber < 1) {
+                alert(`Error!`);
+            } else if (fibonacciNumber == 1) {
+                text = `Kết quả: 1`;
+            } else if (fibonacciNumber == 2) {
+                text = `Kết quả: 1, 1`;
+            } else if (fibonacciNumber > 2) {
+                let i = 1, j = 1, count = 2;
+                let temp = null;
+                text = `Kết quả: 1, 1, `;
+                while (count < fibonacciNumber) {
+                    text += `${i + j}, `;
+                    temp = i;
+                    i = j;
+                    j = temp + j;
+                    count++;
+                }
+                text = text.substring(0, text.length - 2);
+            }
+            document.getElementById(`t_output`).innerHTML = text;
+        }
+    }
+</script>
+</html>

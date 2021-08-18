@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+<form action="">
+    Nhật vào chiều dài: <input type="text" id="ip_wight">;
+    <br>
+    Nhập vào chiều rộng: <input type="text" id="ip_heigh">;
+    <br>
+    <input type="button" value="In hình" onclick="inHCN()"> <br>
+    <text id="t_in_hcn"></text>
+</form>
+</body>
+<script>
+    function inHCN() {
+        let wight = parseInt(document.getElementById(`ip_wight`).value);
+        let height = parseInt(document.getElementById(`ip_heigh`).value);
+        let text = ``;
+        if (isNaN(wight) || isNaN(height)){
+            alert(`Error!`);
+        } else if (wight % 1 != 0 || height % 1 != 0){
+            alert(`Error!`);
+        } else if (wight < 1 || height < 1){
+            alert(`Error!`);
+        } else {
+            let i;
+            for (i = 1; i <= height; i++){
+                for (let j = 1; j <= wight; j++) {
+                    if (i == 1 || height == i || j == 1 || wight == j){
+                        text += `*`;
+                    } else {
+                        text += `&ensp;`;
+                    }
+                }
+                text +=`<br>`;
+            }
+            document.write(text);
+        }
+    }
+</script>
+</html>
