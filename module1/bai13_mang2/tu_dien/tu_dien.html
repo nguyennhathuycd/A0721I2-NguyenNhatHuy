@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>Từ điển</h3>
+<input type="text" id="ip_timKiem">
+<input type="button" value="Tìm kiếm" onclick="find()"> <br> <br>
+<div id="result"></div>
+</body>
+<script>
+    let ArrA = ['I','you', 'and','is', 'have', 'pen', 'book', 'phone', 'tree', 'black', 'white', 'computer'];
+    let ArrB = ['Tôi', 'Bạn', 'Và','Là', 'Có', 'Bút', 'Sách', 'Điện thoại', 'Cây', 'Đen', 'Trắng', 'Máy tính'];
+    function find() {
+        let str = document.getElementById('ip_timKiem').value;
+        if (!isNaN(str) || str == ''){
+            document.getElementById(`result`).innerHTML = `Error`;
+        } else {
+            let check = 0;
+            for (let i = 0; i < ArrA.length; i++){
+                if (str.toUpperCase() == ArrA[i].toUpperCase()){
+                    document.getElementById('result').innerHTML = `${ArrB[i]}`;
+                    check = 1;
+                    break;
+                }
+            }
+            if (check == 0){
+                document.getElementById('result').innerText = 'Không tìm thấy';
+            }
+        }
+    }
+</script>
+</html>

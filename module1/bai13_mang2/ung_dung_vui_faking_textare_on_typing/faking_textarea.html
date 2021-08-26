@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking textarea</title>
+</head>
+<body>
+<h2>Type anthing slowly</h2>
+<form name="f">
+    <textarea id="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+</form>
+</body>
+<script>
+    let a = 'Tôi là người ngoài hành tinh!!';
+    let result="";
+    function typeTextarea(){
+        let t = document.getElementById('txt').value;
+        if(t.length > 0)
+        {
+            for(let i=0; i<t.length; i++)
+            {
+                result += a[i];
+                if(i == a.length)
+                {
+                    document.getElementById('txt').value = "";
+                    result = "";
+                }
+            }
+        }
+        document.getElementById('txt').value = result;
+        console.log(result);
+        result="";
+        setTimeout("typeTextarea()", 1);
+
+    }
+</script>
+</html>

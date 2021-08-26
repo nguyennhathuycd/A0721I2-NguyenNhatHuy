@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<h3>Sample Screen</h3>
+<input type="text" id="ip_arrayElement">
+<input type="button" value="Add" onclick="addElement()">
+<input type="button" value="Display" onclick="displayArray()"> <br>
+<div id="result"></div>
+</body>
+<script>
+    let arr = [];
+    let elementIndex = 0;
+    let text = '';
+    function addElement() {
+        let elementValue = document.getElementById('ip_arrayElement').value;
+        if (elementValue == ''){
+            document.getElementById('result').innerHTML = 'Error!';
+        } else {
+            arr[elementIndex] = elementValue;
+            text += `Element ${elementIndex} = ${elementValue}<br>`;
+            elementIndex++;
+            document.getElementById(`ip_arrayElement`).value = '';
+            document.getElementById(`result`).innerHTML = `Thêm ${elementValue} vào mảng thành công`;
+        }
+    }
+    function displayArray() {
+        document.getElementById(`result`).innerHTML = text;
+    }
+</script>
+</html>

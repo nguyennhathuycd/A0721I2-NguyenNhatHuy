@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa</h3>
+<input type="text" id="ip_string">
+<input type="button" value="Change" onclick="change()"> <br> <br>
+<div id="result"></div>
+</body>
+<script>
+    function change() {
+        let str = document.getElementById(`ip_string`).value;
+
+        if (!isNaN(str) || str == ''){
+            document.getElementById(`result`).innerHTML = `Error`;
+        } else {
+            let result = '';
+            for (let i = 0; i < str.length; i++){
+                // console.log(str[i].toUpperCase());
+                if (str[i] === str[i].toUpperCase()){
+                    result += str[i].toLowerCase();
+                } else {
+                    result += str[i].toUpperCase();
+                }
+            }
+            document.getElementById(`result`).innerHTML = result;
+        }
+    }
+</script>
+</html>

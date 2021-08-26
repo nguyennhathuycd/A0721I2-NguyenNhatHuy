@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<h3>Đảo ngược các phần tử trong mảng</h3>
+<input type="text" id="ip_arrayElement">
+<input type="button" value="Add" onclick="addElement()">
+<input type="button" value="Reverse" onclick="reverse()"> <br>
+<div id="array"></div>
+<div id="result"></div>
+</body>
+<script>
+    let arr = [];
+    let elementIndex = 0;
+    let printResult = 'Reverse Array = [';
+    let text = 'Array = [';
+    function addElement() {
+        let elementValue = document.getElementById('ip_arrayElement').value;
+        if (elementValue == ''){
+            document.getElementById('result').innerHTML = 'Error!';
+        } else {
+            arr[elementIndex] = elementValue;
+            elementIndex++;
+            document.getElementById(`ip_arrayElement`).value = '';
+            if (arr.length > 1){
+                text = text.substring(0,text.length - 1);
+                text += `, ${elementValue}]`;
+            } else {
+                text += `${elementValue}]`;
+            }
+            document.getElementById(`array`).innerHTML = text;
+        }
+    }
+    function reverse() {
+        if (arr.length > 1){
+            arr.reverse();
+            for (let j = 0; j < arr.length; j++){
+                printResult += `${arr[j]}, `;
+            }
+            printResult = printResult.substring(0,printResult.length - 2);
+            printResult += `]`;
+            document.getElementById(`result`).innerHTML = printResult;
+        }
+    }
+</script>
+</html>
