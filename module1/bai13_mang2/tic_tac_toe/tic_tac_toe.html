@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="table"></p>
+<p id="noti"></p>
+</body>
+<script>
+    let arr = new Array(10);
+    let checkPlayer = true;
+
+    for (let i = 0; i < 10; i++){
+        arr[i] = new Array(10);
+        for (let j = 0; j < 10; j++){
+            arr[i][j] = '';
+        }
+    }
+    display();
+
+    function display() {
+        let table = `<table border="1px">`;
+        for (let i = 0; i < 10; i++){
+            table+= `<tr>`;
+            for (let j = 0; j < 10; j++){
+                table+=`<td width="20px"; height=20px"; onclick="play(+`+i+`,`+j+`)">`+arr[i][j]+`</td>`;
+            }
+            table+=`</tr>`;
+        }
+        table += `</table>`;
+        document.getElementById('table').innerHTML = table;
+    }
+
+    function play(i,j) {
+        document.getElementById('noti').innerText = ``;
+        if (checkPlayed(i,j) == false){
+            if (checkPlayer){
+                arr[i][j] = `X`;
+                if (checkWin() && checkPlayer){
+                    document.getElementById('noti').innerText = `Thông báo: Người chơi 1 đã chiến thắng`;
+                } else if (checkWin()){
+                    document.getElementById('noti').innerText = `Thông báo: Người chơi 2 đã chiến thắng`;
+                }
+                checkPlayer = false;
+            } else if (checkPlayer == false) {
+                arr[i][j] = `O`;
+                if (checkWin() && checkPlayer){
+                    document.getElementById('noti').innerText = `Thông báo: Người chơi 1 đã chiến thắng`;
+                } else if (checkWin()){
+                    document.getElementById('noti').innerText = `Thông báo: Người chơi 2 đã chiến thắng`;
+                }
+                checkPlayer = true;
+            }
+            display();
+        } else {
+            document.getElementById('noti').innerText = `Thông báo: Ô này đã được tích`;
+        }
+    }
+
+    function checkPlayed(i,j) {
+        if (arr[i][j] == ''){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkWin() {
+        for (let i = 0; i < 8; i++){
+            for (let j = 0; j < 8; j++){
+                if (arr[i][j] == 'X'){
+                    if (arr[i][j+1] == 'X' && arr[i][j+2] == 'X'){
+                        return true;
+                    }
+                    if (arr[i+1][j] == 'X' && arr[i+2][j] == 'X'){
+                        return true;
+                    }
+                    if (arr[i+1][j+1] == 'X' && arr[i+2][j+2] == 'X'){
+                        return true;
+                    }
+                    if (arr[i+1][j-1] == 'X' && arr[i+2][j-2] == 'X'){
+                        return true;
+                    }
+                }
+                if (arr[i][j] == 'O'){
+                    if (arr[i][j+1] == 'O' && arr[i][j+2] == 'O'){
+                        return true;
+                    }
+                    if (arr[i+1][j] == 'O' && arr[i+2][j] == 'O'){
+                        return true;
+                    }
+                    if (arr[i+1][j+1] == 'O' && arr[i+2][j+2] == 'O'){
+                        return true;
+                    }
+                    if (arr[i+1][j-1] == 'O' && arr[i+2][j-2] == 'O'){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+</script>
+</html>
