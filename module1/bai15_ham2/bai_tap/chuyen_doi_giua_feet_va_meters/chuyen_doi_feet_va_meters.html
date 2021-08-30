@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Chuyển đổi giữa feet và meters</h3>
+<text>Nhập nhiệt độ: </text>
+<input type="text" id="input"> <br>
+<input type="button" onclick="to_feet(document.getElementById('input').value)" value="Chuyển đổi qua feet">
+<input type="button" onclick="to_meters(document.getElementById('input').value)" value="Chuyển đổi qua meters">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function to_meters(feet) {
+        if (isNaN(feet) || feet == '') {
+            document.getElementById('result').innerHTML = 'Error';
+        } else {
+            let meter = 0.305 * feet;
+            document.getElementById('result').innerHTML = `Đáp án: ${meter} mét`;
+        }
+    }
+
+        function to_feet(meter) {
+            if (isNaN(meter) || meter == '') {
+                document.getElementById('result').innerHTML = 'Error';
+            } else {
+                let feet = 3.279 * meter;
+                document.getElementById('result').innerHTML = `Đáp án: ${feet} feet`;
+            }
+        }
+</script>
+</html>

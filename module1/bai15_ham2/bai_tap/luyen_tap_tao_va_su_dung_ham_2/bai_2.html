@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</h3>
+    <text>Nhập bán kính hình tròn: </text>
+    <input type="text" id="ip_radius">
+    <br>
+    <input type="button" value="Tính toán" onclick="circle(document.getElementById('ip_radius').value)">
+    <br>
+    <text id="t_result"></text>
+</body>
+<script>
+    function circle(radius) {
+        if (isNaN(radius) || radius == ''){
+            document.getElementById('t_result').innerHTML = `Error`
+        } else {
+            const pi = 3.14
+            let area = Math.round(pi * radius * radius *  100)/100;
+            let perimeter = Math.round(pi * radius * 2 *  100)/100;
+            document.getElementById('t_result').innerHTML = `Đáp án: Diện tích = ${area}, chu vi = ${perimeter}`
+        }
+    }
+</script>
+</html>

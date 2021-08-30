@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+    <text>Nhập một số: </text>
+    <input type="text" id="ip_number">
+    <br>
+    <input type="button" value="Tính" onclick="square(document.getElementById('ip_number').value)"> <br>
+    <text id="t_result"></text>
+</body>
+<script>
+    function square(number) {
+        if (isNaN(number) || number == ''){
+            document.getElementById('t_result').innerHTML = `Error`
+        } else {
+            document.getElementById('t_result').innerHTML = `Đáp án: ${number * number}`
+        }
+    }
+</script>
+</html>

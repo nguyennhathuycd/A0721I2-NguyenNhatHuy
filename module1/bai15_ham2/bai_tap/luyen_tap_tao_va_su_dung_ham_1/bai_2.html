@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tăng giá trị đối số đó lên 1</title>
+</head>
+<body>
+<text>Nhập một số: </text>
+<input type="text" id="input"> <br>
+<input type="button" onclick="plusOne(document.getElementById('input').value)" value="Tính toán"> <br>
+<text id="t_result"></text>
+</body>
+<script>
+    function plusOne(number) {
+        if (isNaN(number) || number == ''){
+            document.getElementById('t_result').innerHTML = `Error`;
+        } else {
+
+            let result = Number(number) + 1;
+            document.getElementById('t_result').innerHTML = `Kết quả: ${result}`;
+        }
+    }
+</script>
+</html>

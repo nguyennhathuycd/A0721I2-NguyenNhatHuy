@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<text>Nhập số thứ nhất: </text>
+<input type="text" id="number1"> <br>
+<text>Nhập số thứ hai: </text>
+<input type="text" id="number2"> <br>
+<input type="button" onclick="compare(document.getElementById('number1').value, document.getElementById('number2').value)" value="So sánh"> <br>
+<text id="t_result"></text>
+</body>
+<script>
+    function compare(number1,number2) {
+        if (isNaN(number1) || isNaN(number2) || number1 == '' || number2==''){
+            document.getElementById('t_result').innerHTML = `Error!!!`;
+        } else {
+            number1 = Number(number1);
+            number2 = Number(number2);
+            if (number1 > number2){
+                document.getElementById('t_result').innerHTML = `Số ${number1} lớn hơn số ${number2}`;
+            } else {
+                document.getElementById('t_result').innerHTML = `Tổng hai số là: ${number1 + number2}`;
+            }
+        }
+    }
+</script>
+</html>

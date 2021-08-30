@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false</h3>
+    <text>Nhập ký tự: </text>
+    <input type="text" id="ip_char">
+    <br>
+    <input type="button" value="Kiểm tra ký tự" onclick="circle(document.getElementById('ip_char').value)">
+    <br>
+    <text id="t_result"></text>
+</body>
+<script>
+    function circle(char) {
+        if (char == ''){
+            document.getElementById('t_result').innerHTML = `Error!!!`
+        } else {
+           if (isNaN(Number(char))){
+               document.getElementById('t_result').innerHTML = `"${char}" không phải là ký tự số`
+           } else {
+               document.getElementById('t_result').innerHTML = `"${char}" là ký tự số`
+           }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất</h3>
+    <text>Nhập số nguyên thứ nhất: </text>
+    <input type="text" id="ip_number1">
+    <br>
+    <text>Nhập số nguyên thứ hai: </text>
+    <input type="text" id="ip_number2">
+    <br>
+    <text>Nhập số nguyên thứ ba: </text>
+    <input type="text" id="ip_number3">
+    <br>
+    <input type="button" value="Tìm số lớn nhất" onclick="findBiggestNumber(document.getElementById('ip_number1').value,document.getElementById('ip_number2').value,document.getElementById('ip_number3').value)">
+    <br>
+    <text id="t_result"></text>
+</body>
+<script>
+    function findBiggestNumber(number1, number2, number3) {
+        number1 = Number(number1)
+        number2 = Number(number2)
+        number3 = Number(number3)
+        if (isNaN(number1) || isNaN(number2) || isNaN(number3) || number1 == '' || number2 == '' || number3 == ''){
+            document.getElementById('t_result').innerHTML = `Error!!!`
+        } else {
+            biggestNumber = number1;
+            if (number2 >= number1 && number2 >= number3){
+                biggestNumber = number2;
+            } else if (number3 >= number1 && number3 >= number2){
+                biggestNumber = number3;
+            }
+            document.getElementById('t_result').innerHTML = `Trong 3 số: ${number1}, ${number2}, ${number3}. Số lớn nhất là ${biggestNumber}.`
+        }
+    }
+</script>
+</html>
