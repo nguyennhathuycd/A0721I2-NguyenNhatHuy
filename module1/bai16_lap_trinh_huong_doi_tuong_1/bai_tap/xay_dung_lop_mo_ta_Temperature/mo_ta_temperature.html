@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả Temperature</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h3>Chuyển đổi nhiệt độ sử dụng lớp mô tả Temperature</h3>
+Nhập độ C: <input type="text" id="ip_doC">
+<br>
+<input type="button" value="Chuyển đổi qua độ F" onclick="checkInput(1)">
+<input type="button" value="Chuyển đổi qua độ K" onclick="checkInput(2)">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function checkInput(checkButton){
+        let doC = document.getElementById('ip_doC').value
+        if (doC != '' && !isNaN(doC) && Number(doC) >= -273){
+            doC = Number(doC)
+            let result = ``
+            let temperature = new Temperature(doC)
+            if (checkButton == 1){
+                result = `Chuyển đổi qua độ F = ${temperature.toF()} độ F`
+            } else if (checkButton == 2){
+                result = `Chuyển đổi qua độ K = ${temperature.toKevin()} độ K`
+            }
+            document.getElementById('result').innerHTML = result
+        } else if (Number(doC) < -273){
+            document.getElementById('result').innerText = `Lỗi!!! Hãy nhập độ C lớn hơn hoặc bằng -273`
+        } else {
+            document.getElementById('result').innerText = `Lỗi!!! Mời bạn nhập lại.`
+        }
+    }
+    class Temperature{
+        constructor(doC) {
+            this.doC = doC;
+        }
+        toF(){
+            return Math.round((this.doC * 1.8 + 32)*100)/100
+        }
+        toKevin() {
+            return Math.round((this.doC + 273.15)*100)/100
+        }
+    }
+</script>
+</html>

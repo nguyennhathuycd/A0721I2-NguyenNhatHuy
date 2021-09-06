@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả hình chữ nhật</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Mô tả hình chữ nhật</h3>
+Nhập chiều dài: <input type="text" id="ip_length">
+<br>
+Nhập chiều rộng: <input type="text" id="ip_width">
+<br>
+<input type="button" value="Tính toán" onclick="checkInput()">
+<br>
+<text id="result"></text>
+<br>
+<canvas id="canvas" width="500" height="600"></canvas>
+</body>
+<script>
+    function checkInput() {
+        let length = document.getElementById('ip_length').value
+        let width = document.getElementById('ip_width').value
+        if (length > 0 && width > 0 && !isNaN(length) && !isNaN(width) && !isNaN(length) && width != '' && length != ''){
+            let result = ''
+            let rectangle = new Rectangle(length,width)
+            result = `Chu vi = ${rectangle.perimeter()}, diện tích = ${rectangle.area()}`
+            document.getElementById('result').innerHTML = result
+            rectangle.draw()
+        } else {
+            document.getElementById('result').innerHTML = 'Error!!!'
+        }
+    }
+    class Rectangle {
+        constructor (length, width) {
+            this.length = Number(length);
+            this.width = Number(width);
+        }
+        area(){
+            return (this.length * this.width);
+        }
+        perimeter(){
+            return ((this.length + this.width) * 2);
+        }
+        draw(){
+            let canvas = document.getElementById("canvas");
+            let ctx = canvas.getContext('2d');
+            ctx.fillStyle='#fa4b2a';
+            ctx.fillRect(30, 40, this.length, this.width);
+        }
+    }
+</script>
+</html>
