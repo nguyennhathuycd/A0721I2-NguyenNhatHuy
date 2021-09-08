@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Apple{
+        constructor() {
+            this.weight = 10;
+        }
+        decrease(){}
+        isEmpty(){}
+    }
+
+    class Human{
+        constructor(name, sex, weight) {
+            this.name = name;
+            this.sex = sex;
+            this.weight = weight;
+        }
+        say(str){
+            document.write(`Say: ${str}`)
+        }
+        eatApple(Apple){
+            if (Apple.weight > 0){
+                Apple.weight--;
+                this.weight++;
+            } else {
+                document.write(`Không ăn được táo`);
+            }
+        }
+    }
+
+</script>
+</html>
