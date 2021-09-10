@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm</h3>
+Nhập ký tự: <input type="text" id="ip_kytu">
+<br>
+<input type="button" value="Kiểm tra ký tự" onclick="checkChar()">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function checkChar() {
+        let char = document.getElementById('ip_kytu').value;
+        let result = ``;
+        if (char.length != 1){
+            result = `Hãy nhập 1 ký tự`;
+        } else if (!/^[a-zA-Z]/.test(char)){
+            result = `Hãy nhập chữ`;
+        } else {
+            switch(char) {
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                case 'i':
+                case 'I':
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                    result = "Ký tự '" + char + "' là nguyên âm";
+                    break;
+                default:
+                    result = "Ký tự '" + char + "' là phụ âm";
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>

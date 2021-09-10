@@ -12,28 +12,78 @@
         constructor() {
             this.weight = 10;
         }
-        decrease(){}
-        isEmpty(){}
+        getWeight(){
+            return this.weight;
+        }
+        decrease(){
+            this.weight--;
+        }
+        isEmpty(){
+            if (this.weight <= 0){
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     class Human{
-        constructor(name, sex, weight) {
+        constructor(name, genger, weight) {
             this.name = name;
-            this.sex = sex;
+            this.gender = genger;
             this.weight = weight;
         }
         say(str){
-            document.write(`Say: ${str}`)
+            document.write(`Say: ${str} <br>`)
         }
-        eatApple(Apple){
-            if (Apple.weight > 0){
-                Apple.weight--;
+        isMale(){
+            if (this.gender){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+        eat(Apple){
+            if (this.checkApple(Apple)){
+                Apple.decrease();
                 this.weight++;
             } else {
                 document.write(`Không ăn được táo`);
             }
         }
+        checkApple(Apple){
+            if (!Apple.isEmpty()){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getWeight(){
+            return this.name;
+        }
+        setWeight(weight){
+            this.name = weight;
+        }
     }
 
+    let apple = new Apple();
+    let human = new Human('Adam',true, 70);
+    human.say('My name is Adam');
+    if (human.isMale()){
+        document.write(`Giới tính: Nam <br>`)
+    } else {
+        document.write(`Giới tính: Nữ <br>`)
+    }
+    human.eat(apple)
+    document.write(`Sau khi ăn táo: Cân nặng = ${human.weight}, khối lượng quả táo = ${apple.getWeight()}<br>`)
 </script>
 </html>

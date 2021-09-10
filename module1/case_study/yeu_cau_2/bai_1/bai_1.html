@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng</h3>
+Nhập lương: <input type="text" id="ip_luong">
+<br>
+<input type="button" value="Tính lương" onclick="calculaterSalary()">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function calculaterSalary()
+    {
+        let luong = document.getElementById('ip_luong').value;
+        let thueSuat,soThue,luongRong;
+        let result = '';
+        if (isNaN(luong) || luong == '') {
+            result = `Hãy nhập số lương`
+        } else if (luong <= 0) {
+            result = `Hãy nhập số lương > 0`
+        } else {
+            if(luong>15000000)
+            {
+                soThue=luong*20/100;
+                thueSuat=20;
+                luongRong=luong-soThue;
+            }
+            else if(luong>=7000000)
+            {
+                soThue=luong*10/100;
+                thueSuat=10;
+                luongRong=luong-soThue;
+            }
+            else
+            {
+                soThue=luong*5/100;
+                thueSuat=5;
+                luongRong=luong-soThue;
+            }
+            result = `Lương = ${luong}<br>Thuế thu nhập với mức thuế suất ${thueSuat} % = ${soThue}<br>Số tiền lương bản thân là = ${luongRong}`;
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>

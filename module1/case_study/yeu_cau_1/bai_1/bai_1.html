@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m</h3>
+Nhập chiều dài: <input type="text" id="ip_length">
+<br>
+Nhập chiều rộng: <input type="text" id="ip_width">
+<br>
+<input type="button" value="Vẽ hình" onclick="drawRectangle()">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function drawRectangle() {
+        let length = document.getElementById('ip_length').value;
+        let width = document.getElementById('ip_width').value;
+        let result = '';
+        if (isNaN(length) || isNaN(width) || length == '' || width == '') {
+            result = `Hãy nhập số`
+        } else if (length <= 0 || width <= 0) {
+            result = `Hãy nhập số > 0`
+        } else {
+            for (let i = 1; i <= width; i++) {
+                for (let j = 1; j <= length; j++) {
+                    if (i == 1 || j == 1 || i == width || j == length) {
+                        result += '*';
+                    } else {
+                        result += '&ensp;';
+                    }
+                }
+                result += `<br>`;
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Vẽ tam giác vuông cân rỗng có chiều cao h</h3>
+Nhập chiều cao: <input type="text" id="ip_height">
+<br>
+<input type="button" value="Vẽ hình" onclick="drawEmptyIsoscelesTriangle()">
+<br>
+<text id="result"></text>
+</body>
+<script>
+    function drawEmptyIsoscelesTriangle() {
+        let height = document.getElementById('ip_height').value;
+        let result = '';
+        if (isNaN(height) || height == '') {
+            result = `Hãy nhập số`
+        } else if (height <= 0) {
+            result = `Hãy nhập số > 0`
+        } else {
+            let m = height, n = height;
+            for (let i = 1; i <= height; i++)
+            {
+                for (let j = 1; j <= 2 * height - 1; j++)
+                {
+                    if (j == m || j == n || i== height)
+                        result += "*";
+                    else
+                        result += '&ensp;';
+                }
+                m--;
+                n++;
+                result += "<br>";
+            }
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
