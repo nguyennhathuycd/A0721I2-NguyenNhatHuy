@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chuỗi đối xứng</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>Kiểm tra chuỗi đối xứng</h3>
+    Nhập một chuỗi: <input type="text" id="ip_input">
+    <br>
+    <input type="button" value="Kiểm tra" onclick="checkPalindrome()">
+    <br>
+    <text id="result"></text>
+</div>
+</body>
+<script>
+function checkPalindrome() {
+    let str = document.getElementById('ip_input').value;
+    let result = '';
+    if (str == ''){
+        result = 'Hãy nhập một chuỗi!';
+    } else {
+        for (let i = 0; i < str.length; i++){
+            if (!(str[i] == str[str.length-1-i])){
+                result = `Chuỗi '${str}' là một chuỗi không đối xứng`;
+                break;
+            }
+        }
+        if (result == ''){
+            result = `Chuỗi '${str}' là một chuỗi đối xứng`
+        }
+    }
+    document.getElementById('result').innerHTML = result;
+}
+</script>
+</html>
