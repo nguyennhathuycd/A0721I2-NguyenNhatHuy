@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+
+</body>
+<script>
+    function chuanHoaXau(xau) {
+        let mang = xau.split(" ");
+        let i, ketqua = "", temp;
+        for (i = 0; i < mang.length; i++) {
+            temp = mang[i].trim().toLowerCase();
+            if (temp != "") {
+                temp = temp.substr(0, 1).toUpperCase() + temp.substr(1);
+                ketqua += temp + " ";
+            }
+        }
+        alert('Xâu ký tự sau khi chuẩn hóa: ' + ketqua.trim());
+    }
+    
+    function tuDaiNhat(xau) {
+        let mang = xau.split(" ");
+        let doDaiLonNhat = 0;
+        let temp;
+        for (let i = 0; i < mang.length; i++) {
+            if (mang[i].length > doDaiLonNhat) {
+                doDaiLonNhat = mang[i].length;
+                temp = mang[i];
+            }
+        }
+        temp = temp.toLowerCase();
+        if (temp != "") {
+            temp = temp.substr(0, 1).toUpperCase() + temp.substr(1);
+        }
+        alert('Từ dài nhất có trong xâu là ' + temp.trim());
+    }
+
+    let xau = prompt('Nhâp chuỗi ký tự: ');
+
+    if (!isNaN(xau) || xau == ''){
+        alert(`Vui lòng nhập lại xâu ký tự!`);
+    } else {
+        chuanHoaXau(xau);
+        tuDaiNhat(xau);
+    }
+</script>
+</html>

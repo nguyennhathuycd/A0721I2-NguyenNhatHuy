@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<div>
+    <h3>Chương trình tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A</h3>
+</div>
+</body>
+<script>
+    let A = [7,2,5,3,5,3];
+    let B = [9,7,2,5,4,6,3,5,3];
+    let result = [];
+    for (let i = 0; i < B.length; i++){
+        let check = 0;
+        for (let j = 0; j < A.length; j++){
+            if (B[i] == A[j]){
+                check = 1;
+                break;
+            }
+        }
+        if (check == 0){
+            result.push(B[i]);
+        }
+    }
+    result.sort(function(a, b){return a - b});
+    console.log(result);
+</script>
+</html>

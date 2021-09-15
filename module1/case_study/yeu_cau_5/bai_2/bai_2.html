@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+</body>
+<script>
+    function soNguyenTo(arr) {
+        let ketqua = '';
+        let dem = 0;
+        for (let i = 0; i < arr.length; i++){
+            for (let j = 0; j < arr[i].length; j++){
+                let kiemtra = 0;
+                for (let k = 1; k <= arr[i][j]; k++){
+                    if (arr[i][j] % k == 0){
+                        kiemtra++;
+                    }
+                }
+                if (kiemtra == 2){
+                    ketqua += ` ${arr[i][j]}`;
+                    dem++;
+                }
+            }
+        }
+        console.log(`Các số nguyên tố trong mảng 2 chiều là: ${ketqua}.\nSố nguyên tố có trong mảng: ${dem}`);
+    }
+    let arr = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+    ]
+    soNguyenTo(arr);
+</script>
+</html>

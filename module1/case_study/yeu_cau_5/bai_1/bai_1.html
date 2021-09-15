@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+
+</body>
+<script>
+    let m = prompt('Nhập m:');
+    let n = prompt('Nhập n:');
+    let arr = new Array();
+    if (isNaN(m) || isNaN(n) || m == '' || n == '' || m%1!= 0 || n % 1 != 0){
+        alert('Lỗi nhập từ bàn phím. Vui lòng nhập lại!');
+    } else {
+        for (let i = 0; i < n; i++){
+            arr[i] = new Array(m);
+            for (let j = 0; j < m; j++){
+                let check = 1;
+                do {
+                    let temp = parseInt(prompt(`Nhập mảng [${i},${j}]:`));
+                    if (isNaN(temp) || temp == ''){
+                        alert(`Lỗi nhập từ bàn phím. Vui lòng nhập lại!`)
+                        check = 0;
+                    } else {
+                        arr[i][j] = temp;
+                        check = 1;
+                    }
+                } while (check != 1);
+            }
+        }
+        alert(arr);
+        console.log(`Tổng các số chẵn trong mảng 2 chiều la ${tinhTongSoChan(arr)}`);
+    }
+    
+    function tinhTongSoChan(arr) {
+        let tongSoChan = 0;
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < m; j++) {
+                if (arr[i][j] % 2 == 0) {
+                    tongSoChan += arr[i][j];
+                }
+            }
+        }
+        alert(tongSoChan);
+        return tongSoChan;
+    }
+</script>
+</html>

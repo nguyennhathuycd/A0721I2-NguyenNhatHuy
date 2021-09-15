@@ -12,19 +12,35 @@
     let b = [];
     let resultA = `Chuỗi A = `;
     let resultB = `Kết quả chuỗi B = `;
+    let check = 0;
     for (let i = 0; i < a.length; i++){
+        if (isNaN(a[i])){
+            check = 1;
+            break;
+        }
         resultA += `${a[i]} `
         for (let j = 0; j <= i; j++){
+            if (isNaN(a[i])){
+                check = 1;
+                break;
+            }
             if (j == 0){
                 b[i] = a[j];
             } else {
                 b[i] += a[j];
             }
         }
+        if (check == 1){
+            break;
+        }
         resultB += `${b[i]} `
     }
-    let result = `${resultA}. ${resultB}`;
-    alert(result);
-    console.log(b);
+    if (check == 1){
+        alert(`Vui lòng nhập số!!!`);
+    } else {
+        let result = `${resultA}. ${resultB}`;
+        alert(result);
+        console.log(b);
+    }
 </script>
 </html>

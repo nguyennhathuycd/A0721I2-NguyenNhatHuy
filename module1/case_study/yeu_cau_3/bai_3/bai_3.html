@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<h3>Chương trình tìm chỉ số của phân số lớn nhất </h3>
+</body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let max = numerators[0]/denominators[0];
+    let index = 0;
+    let result = `${numerators[0]}/${denominators[0]}`;
+    for (let i = 1; i < numerators.length; i++){
+        if (max < (numerators[i] / denominators[i])){
+            max = numerators[i] / denominators[i];
+            index = i;
+            result = `${numerators[i]}/${denominators[i]}`;
+        }
+    }
+    console.log(`Kết quả maxFraction(numerators, denominators) = ${index}\n${result} là phân số lớn nhất, có chỉ là 2`);
+</script>
+</html>

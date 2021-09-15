@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+    <style>
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h3>Chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ</h3>
+    Nhập vào một dãy số: <input type="text" id="ip_string">
+    <br>
+    <input type="button" value="Kết quả" onclick="printLetter()">
+    <br>
+    <text id="result"></text>
+</div>
+</body>
+<script>
+    function printLetter() {
+        let ipValue = document.getElementById('ip_string').value;
+        let result = '';
+        if (isNaN(ipValue) || ipValue == ''){
+            document.getElementById('result').innerText = `Vui lòng nhập vào một dãy số!!!`
+        } else {
+            let str = String(ipValue);
+            for (let i = 0; i < str.length; i++){
+                switch (str[i]) {
+                    case '0': result += `không `; break;
+                    case '1': result += `một `; break;
+                    case '2': result += `hai `; break;
+                    case '3': result += `ba `; break;
+                    case '4': result += `bốn `; break;
+                    case '5': result += `năm `; break;
+                    case '6': result += `sáu `; break;
+                    case '7': result += `bảy `; break;
+                    case '8': result += `tám `; break;
+                    case '9': result += `chín `; break;
+                }
+            }
+            document.getElementById('result').innerHTML = `Kết quả: ${result}`;
+        }
+    }
+</script>
+</html>

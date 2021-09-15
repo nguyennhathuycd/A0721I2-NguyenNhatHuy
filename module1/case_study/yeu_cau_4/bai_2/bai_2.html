@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let xau = prompt('Nhập xâu ký tự');
+    let xauCon = [];
+    if (xau == ''){
+        alert('Vui lòng nhập lại chuỗi!');
+    } else {
+        xau = xau.split('');
+        for (let i = 0; i < xau.length; i++){
+            if (xauCon.indexOf(xau[i]) == -1){
+                xauCon.push(xau[i]);
+            }
+        }
+        if (xauCon.length > 0){
+            alert(`Số lượng kí tự khác nhau trong xâu là ${xauCon.length}`);
+        }
+    }
+</script>
+</html>

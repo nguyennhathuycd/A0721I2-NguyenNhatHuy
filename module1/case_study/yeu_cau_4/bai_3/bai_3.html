@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let s1 = 'aabcc', s2 = "adcaa";
+    if (!isNaN(s1) || !isNaN(s2) || s1 == '' || s2 == ''){
+        console.log(`Vui lòng nhập lại chuỗi!`);
+    } else {
+        s1 = s1.split('');
+        s2 = s2.split('');
+        let result = []
+        for (let i = 0; i < s1.length; i++){
+            for (let j = 0; j < s2.length; j++){
+                if (result.indexOf(s1[i]) > 0){
+                    break;
+                } else if (s1[i] == s2[j]){
+                    result.push(s1[i]);
+                    break;
+                }
+            }
+        }
+
+        if (result.length > 0){
+            console.log(`CommonCharacterCount(s1, s2) = ${result.length}`);
+        } else {
+            console.log(`Chuỗi s1 và s2 không có ký tự trùng nhau`);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+</body>
+<script>
+    let sanPham = [' 1 (Cafe)',' 2 (Cam vắt)',' 3 (Nước ép cà rốt)',' 4 (Nước ép cà chua)',' 5 (Nước lọc)',' 6 (Nước dừa)',' 7 (Thoát gọi món)'];
+    let giaSanPham = [10000,20000,30000,40000,50000,60000]
+    let soSanPham;
+    let soLuong;
+    let tongTien = 0;
+
+    do{
+        soSanPham = prompt('Vui lòng gọi món: '+ sanPham);
+        if (isNaN(soSanPham) || soSanPham < 1 || soSanPham > sanPham.length){
+            alert('Lỗi gọi món! Vui lòng gọi lại món');
+        } else if (soSanPham == 7){
+            break;
+        } else {
+            soLuong = prompt(`Giá của sản phẩm ${sanPham[soSanPham-1]} là ${giaSanPham[soSanPham-1]} VNĐ.\nVui lòng nhập số lượng sản phẩm:`);
+            if (isNaN(soLuong) || soLuong < 1 ){
+                alert('Lỗi nhập số lượng! Vui lòng gọi lại món');
+            } else {
+                tongTien += soLuong * giaSanPham[soSanPham-1];
+            }
+        }
+    } while (soSanPham != 7)
+
+    if (tongTien > 0){
+        alert(`Tổng số tiền: ${tongTien} VNĐ`)
+    } else {
+        alert(`Bạn chưa gọi món!`);
+    }
+</script>
+</html>
