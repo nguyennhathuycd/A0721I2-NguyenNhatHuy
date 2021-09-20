@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển trò chơi caro</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<h4>Người chơi 1 (X). Người chơi 2 (O)</h4>
+<p id="table"></p>
+</body>
+<script>
+    let arr = new Array(20);
+    let checkPlayer = true;
+
+    function createTable() {
+        for (let i = 0; i < 20; i++) {
+            arr[i] = new Array(20);
+            for (let j = 0; j < 20; j++) {
+                arr[i][j] = '';
+            }
+        }
+    }
+
+    createTable();
+    display();
+
+    function display() {
+        let table = `<table border="1px"; style="border-collapse: collapse">`;
+        for (let i = 0; i < 20; i++) {
+            table += `<tr>`;
+            for (let j = 0; j < 20; j++) {
+                table += `<td width="20px"; height=20px"; onclick="play(+` + i + `,` + j + `)">` + arr[i][j] + `</td>`;
+            }
+            table += `</tr>`;
+        }
+        table += `</table>`;
+        document.getElementById('table').innerHTML = table;
+    }
+
+    function play(i, j) {
+        if (checkPlayed(i, j) == false) {
+            if (checkPlayer) {
+                arr[i][j] = `X`;
+                if (checkWin()) {
+                    display();
+                    alert(`Chúc mừng người chơi 1 đã giành chiến thắng`);
+                    setTimeout(function () {
+                        createTable();
+                        display();
+                    }, 1000);
+                }
+                checkPlayer = false;
+            } else if (checkPlayer == false) {
+                arr[i][j] = `O`;
+                if (checkWin()) {
+                    display();
+                    alert(`Chúc mừng người chơi 2 đã giành chiến thắng`);
+                    setTimeout(function () {
+                        createTable();
+                        display();
+                    }, 1000)
+                }
+                checkPlayer = true;
+            }
+            display();
+        } else {
+            alert(`Thông báo: Ô này đã được chọn. Vui lòng chọn ô khác`);
+        }
+    }
+
+    function checkPlayed(i, j) {
+        if (arr[i][j] == '') {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkWin() {
+        for (let i = 0; i < 16; i++) {
+            for (let j = 0; j < 16; j++) {
+                if (arr[i][j] == 'X') {
+                    if (arr[i][j + 1] == 'X' && arr[i][j + 2] == 'X' && arr[i][j + 3] == 'X' && arr[i][j + 4] == 'X') {
+                        return true;
+                    }
+                    if (arr[i + 1][j] == 'X' && arr[i + 2][j] == 'X' && arr[i + 3][j] == 'X' && arr[i + 4][j] == 'X') {
+                        return true;
+                    }
+                    if (arr[i + 1][j + 1] == 'X' && arr[i + 2][j + 2] == 'X' && arr[i + 3][j + 3] == 'X' && arr[i + 4][j + 4] == 'X') {
+                        return true;
+                    }
+                    if (arr[i + 1][j - 1] == 'X' && arr[i + 2][j - 2] == 'X' && arr[i + 3][j - 3] == 'X' && arr[i + 4][j - 4] == 'X') {
+                        return true;
+                    }
+                }
+                if (arr[i][j] == 'O') {
+                    if (arr[i][j + 1] == 'O' && arr[i][j + 2] == 'O' && arr[i][j + 3] == 'O' && arr[i][j + 4] == 'O') {
+                        return true;
+                    }
+                    if (arr[i + 1][j] == 'O' && arr[i + 2][j] == 'O' && arr[i + 3][j] == 'O' && arr[i + 4][j] == 'O') {
+                        return true;
+                    }
+                    if (arr[i + 1][j + 1] == 'O' && arr[i + 2][j + 2] == 'O' && arr[i + 3][j + 3] == 'O' && arr[i + 4][j + 4] == 'O') {
+                        return true;
+                    }
+                    if (arr[i + 1][j - 1] == 'O' && arr[i + 2][j - 2] == 'O' && arr[i + 3][j - 3] == 'O' && arr[i + 4][j - 4] == 'O') {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+</script>
+</html>
