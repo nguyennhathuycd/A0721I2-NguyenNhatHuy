@@ -29,12 +29,20 @@ public class main {
 
         System.out.println("Delta = " + qE.getDiscriminant());
 
-        if (qE.getDiscriminant() < 0) {
-            System.out.println("The equation has no roots.");
-        } else if (qE.getDiscriminant() == 0) {
-            System.out.println("The equation has one root: " + qE.getRoot1());
+        if (a == 0) {
+            if (b == 0) {
+                System.out.println("The equation has no solution!");
+            } else {
+                System.out.println("The equation has a solution: " + (-qE.getC() / qE.getB()));
+            }
         } else {
-            System.out.println("The equation has two roots: " + qE.getRoot1() + " and " + qE.getRoot2());
+            if (qE.getDiscriminant() < 0) {
+                System.out.println("The equation has no solution!");
+            } else if (qE.getDiscriminant() == 0) {
+                System.out.println("The equation has a double solution: " + qE.getRoot1());
+            } else {
+                System.out.println("The equation has two solution: " + qE.getRoot1() + " and " + qE.getRoot2());
+            }
         }
     }
 }

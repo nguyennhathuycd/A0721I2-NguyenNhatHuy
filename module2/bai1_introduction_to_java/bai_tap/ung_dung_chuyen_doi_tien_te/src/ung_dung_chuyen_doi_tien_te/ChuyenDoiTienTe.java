@@ -13,17 +13,17 @@ public class ChuyenDoiTienTe {
                 USD = Integer.parseInt(scanner.nextLine());
             }
             catch(Exception ex) {
-                System.out.println("Error: Could not parse money to number, exiting");
-                return;
+                System.out.println("Error: Could not parse money to number.\nPlease enter your monney agian!");
+                continue;
             }
             if (USD <= 0){
-                System.out.println("Please enter your monney agian!");
+                System.out.println("Error: Invalid money.\nPlease enter your monney agian!");
             } else {
                 break;
             }
         }
 
-        double VND = USD * 23000;
+        double VND = USD * rate;
         System.out.println("USD to VND: " + VND + " VND");
     }
 }

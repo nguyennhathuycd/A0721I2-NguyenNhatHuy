@@ -17,34 +17,41 @@ public class XoaPhanTu {
         // Nhap phan tu X
         Scanner scanner = new Scanner(System.in);
         int x = 0;
-        try {
-            System.out.print("\nEnter the element X need to be delete: ");
-            x = Integer.parseInt(scanner.nextLine());
-        } catch (Exception err) {
-            System.out.println("\nError: Could not parse the element X to number, exiting.");
-            return;
+        while (true) {
+            try {
+                System.out.print("\nEnter the element X need to be delete: ");
+                x = Integer.parseInt(scanner.nextLine());
+            } catch (Exception err) {
+                System.out.println("\nError: Could not parse the element X to number.\nPlease enter agian!");
+                continue;
+            }
+            break;
         }
 
-        int index_del = -1;
+        int indexDel = -1;
         for(int i = 0; i < arr.length; i++) {
             if (arr[i] == x){
-                index_del = i;
+                indexDel = i;
                 break;
             }
         }
 
-        if (index_del != -1){
-            for(int i = index_del; i < arr.length - 1; i++) {
-                arr[i] = arr[i + 1];
+        int[] result = new int[arr.length - 1];
+        if (indexDel != -1){
+            for(int i = 0; i < indexDel; i++) {
+                result[i] = arr[i];
             }
-            arr[arr.length - 1] = 0;
+
+            for(int i = indexDel; i < result.length; i++) {
+                result[i] = arr[i + 1];
+            }
 
             System.out.print("The array after delete the element " + x + ": ");
-            for(int i = 0; i < arr.length; i++) {
-                System.out.print("\t"+arr[i]);
+            for(int i = 0; i < result.length; i++) {
+                System.out.print("\t"+result[i]);
             }
         } else {
-            System.out.println("The element X not found in the array");
+            System.out.println("The element " + x + " not found in the array");
         }
     }
 }
