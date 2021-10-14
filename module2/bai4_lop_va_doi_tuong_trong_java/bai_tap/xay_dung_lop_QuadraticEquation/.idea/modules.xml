@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/xay_dung_lop_QuadraticEquation.iml" filepath="$PROJECT_DIR$/xay_dung_lop_QuadraticEquation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/xay_dung_lop_QuadraticEquation.iml" filepath="$PROJECT_DIR$/.idea/xay_dung_lop_QuadraticEquation.iml" />
     </modules>
   </component>
 </project>
