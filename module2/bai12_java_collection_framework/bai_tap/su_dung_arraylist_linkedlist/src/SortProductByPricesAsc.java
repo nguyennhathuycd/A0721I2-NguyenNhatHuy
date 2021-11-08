@@ -1,10 +1,6 @@
-package ultils;
-
-import entity.Product;
-
 import java.util.Comparator;
 
-public class SortProductByNameAsc implements Comparator<Product> {
+public class SortProductByPricesAsc implements Comparator<Product> {
     @Override
     public int compare(Product p1, Product p2) {
         if (p2.getPrice() == p1.getPrice()) {

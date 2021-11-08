@@ -1,11 +1,8 @@
-package repository;
-
-import entity.Product;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class ProductRepository {
+public class ProductManager {
     private static List<Product> productList;
     static {
         productList = new ArrayList<>();
@@ -63,5 +60,9 @@ public class ProductRepository {
         }
 
         return list;
+    }
+
+    public void sortProductByPricesAsc(List<Product> list) {
+        Collections.sort(list, new SortProductByPricesAsc());
     }
 }
