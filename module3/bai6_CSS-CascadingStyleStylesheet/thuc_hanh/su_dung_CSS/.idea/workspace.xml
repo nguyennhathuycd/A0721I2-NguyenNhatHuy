@@ -38,6 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bai_tap/Nhung_CSS_vao_trang_HTML" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.14">
     <configuration name="su_dung_CSS" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
@@ -251,7 +252,7 @@
       <option name="presentableId" value="Default" />
       <updated>1640933447760</updated>
       <workItem from="1640933450736" duration="127000" />
-      <workItem from="1640940951179" duration="1195000" />
+      <workItem from="1640940951179" duration="1630000" />
     </task>
     <servers />
   </component>
