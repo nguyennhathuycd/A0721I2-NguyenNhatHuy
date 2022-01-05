@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ada7dc39-4bc5-4ebf-8f93-8f846e7ec543" name="Changes" comment="" />
+    <list default="true" id="52cf8bf6-c5a2-4ba7-85c5-3bb6a64728bf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,13 +14,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -35,7 +28,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="23HQhlVnQDLpGiGc6xvDrSndDfc" />
+  <component name="ProjectId" id="23HSQjGGSmPSXYuuY6PqNy1izWr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,20 +38,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codegym\A0721I2-NguyenNhatHuy\module3\bai8_bootstrap_co_ban\bai_tap\tao_gallery_co_ban\src\main\webapp" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : org.example : su_dung_bootstrap_xay_dung_form_login-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : tao_gallery_co_ban-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="30be3b0e-569b-4b58-8ced-d65d1da85c81" />
+        <option name="BASE_DIRECTORY_NAME" value="71d561fb-1215-400c-aae4-28bf826c556f" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -66,7 +63,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50975" />
+        <option name="DEBUG_PORT" value="51170" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -131,7 +128,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : su_dung_bootstrap_xay_dung_form_login-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : tao_gallery_co_ban-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -139,12 +136,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ada7dc39-4bc5-4ebf-8f93-8f846e7ec543" name="Changes" comment="" />
-      <created>1641388657746</created>
+      <changelist id="52cf8bf6-c5a2-4ba7-85c5-3bb6a64728bf" name="Changes" comment="" />
+      <created>1641389508224</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1641388657746</updated>
-      <workItem from="1641388659887" duration="833000" />
+      <updated>1641389508224</updated>
+      <workItem from="1641389509551" duration="716000" />
     </task>
     <servers />
   </component>
