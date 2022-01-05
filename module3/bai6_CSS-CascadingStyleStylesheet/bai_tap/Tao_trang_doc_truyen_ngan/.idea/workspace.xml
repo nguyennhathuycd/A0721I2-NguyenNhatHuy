@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622c0e72-78f2-4c4e-a694-2aa3be9fe9a7" name="Changes" comment="" />
+    <list default="true" id="cf29b42b-e39e-4a55-a871-3b8322afdb04" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +35,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2334D1C7SOPZMOREuIvTqfjyALd" />
+  <component name="ProjectId" id="233BCbjksXQ71LAwVnEgqvKqtbc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,23 +45,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ss6_css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.0.14" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.14" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Gradle : org.example : Dinh_dang_van_ban_voi_CSS-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : Tao_trang_doc_truyen_ngan-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="eb6a9a0a-4929-4741-8659-c4029c75beb4" />
+        <option name="BASE_DIRECTORY_NAME" value="1c0a6737-f5cc-41d0-b219-854cefd48077" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -69,7 +67,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57777" />
+        <option name="DEBUG_PORT" value="52170" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -134,7 +132,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : Dinh_dang_van_ban_voi_CSS-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : Tao_trang_doc_truyen_ngan-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -142,12 +140,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="622c0e72-78f2-4c4e-a694-2aa3be9fe9a7" name="Changes" comment="" />
-      <created>1640949316043</created>
+      <changelist id="cf29b42b-e39e-4a55-a871-3b8322afdb04" name="Changes" comment="" />
+      <created>1640952769596</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1640949316043</updated>
-      <workItem from="1640949319442" duration="3409000" />
+      <updated>1640952769596</updated>
+      <workItem from="1640952771441" duration="1473000" />
+      <workItem from="1641349398636" duration="3636000" />
+      <workItem from="1641372605729" duration="443000" />
     </task>
     <servers />
   </component>
