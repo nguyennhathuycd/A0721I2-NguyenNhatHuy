@@ -13,20 +13,29 @@
   <link rel="stylesheet" href="stylesheet.css">
   <body>
 
-  <div class="split left">
-    <div class="centered">
-      <img src="https://static.8cache.com/cover/eJzLyTDWdwk2zQrzCTEsr0z0CIoMCnIOsgw2DzYy1vVPL3WyyHfNyPf10nUNzw8v9grzjw-IcvaqqCryLYsPMzHJSKsMCi10NTUOjQwuqLDw1HXRrSxJSUq2LTcyNNXNMDYyAgD1Fx7t/nguyen-ton.jpg">
-      <h2>Jane Flex</h2>
-      <p>Some text.</p>
-    </div>
+  <div class="header">
+    <h1>Header</h1>
+    <p>Resize the browser window to see the responsive effect.</p>
   </div>
 
-  <div class="split right">
-    <div class="centered">
-      <img src="img_avatar.png" alt="Avatar man">
-      <h2>John Doe</h2>
-      <p>Some text here too.</p>
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+  <div class="row">
+    <div class="column left">
+      <h2>Side</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
     </div>
+
+    <div class="column right">
+      <h2>Main Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+
   </div>
 
   </body>
