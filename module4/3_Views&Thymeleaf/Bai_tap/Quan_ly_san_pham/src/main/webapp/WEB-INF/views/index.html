@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
+<head th:replace="layout :: head">
+</head>
+<body>
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Product <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+                        <form action="/product/search">
+                        <div class="search-box">
+                                <button type="submit" style="background: white"><i class="material-icons">&#xE8B6;</i></button>
+                                <input type="text" th:name="search" class="form-control" placeholder="Search&hellip;">
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a th:href="@{/product/add}">Add new product</a>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name <i class="fa fa-sort"></i></th>
+                    <th>Price</th>
+                    <th>Description <i class="fa fa-sort"></i></th>
+                    <th>Manufacture</th>
+                    <th>Actions <i class="fa fa-sort"></i></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row, iter: ${products}">
+                    <td th:text="${iter.count}"></td>
+                    <td th:text="${row.getName()}"></td>
+                    <td th:text="${row.getPrice()}"></td>
+                    <td th:text="${row.getDescription()}"></td>
+                    <td th:text="${row.getManufacture()}"></td>
+                    <td>
+                        <a th:href="@{/product/{id}/view(id=${row.getId()})}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                        <a th:href="@{/product/{id}/edit(id=${row.getId()})}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" onclick="showDeleteModal()" th:data-id="${row.getId()}" title="Delete"><i class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b th:text="${products.size()}"></b> out of <b th:text="${products.size()}"></b> entries</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+    <form class="modal-content" action="/product/delete" method="post">
+        <input type="text" th:name="productId" id="productId" hidden>
+        <div class="container">
+            <h1>Delete Product</h1>
+            <p>Are you sure you want to delete this product?</p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit"  class="deletebtn">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<footer th:replace="layout :: footer"></footer>
+
+<script>
+    $(document).ready(function(){
+        $(".delete").click(function(){
+            // alert($(this).data('id'));
+            $("#productId").val($(this).data('id'));
+            document.getElementById('id01').style.display='block'
+        });
+    });
+</script>
+</body>
+</html>

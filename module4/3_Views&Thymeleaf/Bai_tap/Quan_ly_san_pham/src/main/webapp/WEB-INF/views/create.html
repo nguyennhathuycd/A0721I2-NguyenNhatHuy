@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="layout :: head">
+</head>
+<body>
+
+<form class="form-horizontal" th:action="@{/product/add}" th:object="${product}" method="post">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>PRODUCTS</legend>
+
+        <a th:href="@{/product}">Back to list</a>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">PRODUCT NAME</label>
+            <div class="col-md-4">
+                <input class="form-control input-md" required="" type="text" th:field="*{name}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" >PRICE</label>
+            <div class="col-md-4">
+                <input class="form-control input-md" required="" type="text" th:field="*{price}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" >DESCRIPTION</label>
+            <div class="col-md-4">
+                <input class="form-control input-md" required="" type="text" th:field="*{description}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" >MANUFACTURE</label>
+            <div class="col-md-4">
+                <input class="form-control input-md" required="" type="text" th:field="*{manufacture}">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" ></label>
+            <div class="col-md-4">
+                <button class="btn btn-primary">SUBMIT</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+
+<footer th:replace="layout :: footer">
+</footer>
+</body>
+</html>
