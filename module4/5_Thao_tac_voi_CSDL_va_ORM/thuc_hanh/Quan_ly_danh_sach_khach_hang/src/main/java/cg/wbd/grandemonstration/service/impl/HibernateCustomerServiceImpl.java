@@ -71,40 +71,4 @@ public class HibernateCustomerServiceImpl implements CustomerService {
         }
         return null;
     }
-
-    @Override
-    public List<Customer> save(List<Customer> customers) {
-        return null;
-    }
-
-    @Override
-    public boolean exists(Long id) {
-        return false;
-    }
-
-    @Override
-    public List<Customer> findAll(List<Long> ids) {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public long count() {
-        return 0;
-    }
-
-    @Override
-    public void delete(Long id) {
-    }
-
-    @Override
-    public void delete(Customer customer) {
-    }
-
-    @Override
-    public void delete(List<Customer> customers) {
-    }
-
-    @Override
-    public void deleteAll() {
-    }
 }
