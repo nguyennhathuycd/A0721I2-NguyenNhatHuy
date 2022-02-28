@@ -57,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../module3/bai11_MVC_Model/bai_tap/Tao_ung_dung_quan_ly_san_pham" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -170,6 +170,7 @@
       <workItem from="1645786465383" duration="6582000" />
       <workItem from="1645862400362" duration="4762000" />
       <workItem from="1645867848078" duration="4146000" />
+      <workItem from="1646045786931" duration="49000" />
     </task>
     <servers />
   </component>

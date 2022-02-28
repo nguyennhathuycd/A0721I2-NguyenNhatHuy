@@ -11,13 +11,6 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements IProductService{
     private static final Map<Integer, Product> products;
 
-    private int id;
-    private String name;
-    private double price;
-    private String description;
-    private String manufacture;
-
-
     static {
         products = new HashMap<>();
         products.put(1, new Product(1, "Sach", 30000, "Sach chinh hang", "Da Nang"));
