@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1>Email list</h1>
+<table border="1">
+    <tr>
+        <th>Language</th>
+        <th>Page size</th>
+        <th>Spam filter</th>
+        <th>Signature</th>
+        <th>View</th>
+        <th>Edit</th>
+    </tr>
+    <th:block th:each="email : ${emails}">
+        <tr>
+            <td th:text="${email.language}"></td>
+            <td th:text="${email.page_size}"></td>
+            <div th:if="${email.spam_filter}">
+                <td>On</td>
+            </div>
+            <div th:unless="${email.spam_filter}">
+                <td>Off</td>
+            </div>
+            <td th:text="${email.signature}"></td>
+            <td><a th:href="@{/email/{id}/view(id=${email.getId()})}">View</a></td>
+            <td><a th:href="@{/email/{id}/edit(id=${email.getId()})}">Edit</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

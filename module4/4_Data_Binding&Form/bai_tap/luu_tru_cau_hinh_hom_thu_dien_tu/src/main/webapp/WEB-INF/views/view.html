@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>View Email</h3>
+<p>
+  <a th:href="@{/email}">
+    Back to email list
+  </a>
+</p>
+<div>
+  <div>
+    <label>Language: </label>
+    <label th:text="${email.language}"></label>
+  </div>
+  <div>
+    <label>Page size: </label>
+    <label th:text="${email.page_size}"></label>
+  </div>
+  <div th:if="${email.spam_filter}">
+    <label>Spam filter: </label>
+    <label>On</label>
+  </div>
+  <div th:unless="${email.spam_filter}">
+    <label>Spam filter: </label>
+    <label>Off</label>
+  </div>
+  <div>
+    <label>Signature: </label>
+    <label th:text="${email.signature}"></label>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>Edit Email</h3>
+<p>
+  <a th:href="@{/email}">
+    Back to email list
+  </a>
+</p>
+
+<label style="color: red" th:value="${msg}">
+</label>
+
+<form th:action="@{/email/edit}" method="post" th:object="${email}" novalidate="novalidate">
+  <input type="text" th:field="*{id}">
+  <div>
+    <label>Language: </label>
+    <input type="text" th:field="*{language}">
+  </div>
+  <div>
+    <label>Page size: </label>
+    <input type="text" th:field="*{page_size}">
+  </div>
+  <div th:if="${email.spam_filter}">
+    <label>Spam filter: </label>
+    <input type="checkbox" th:field="*{spam_filter}" checked>
+  </div>
+  <div th:unless="${email.spam_filter}">
+    <label>Spam filter: </label>
+    <input type="checkbox" th:field="*{spam_filter}">
+  </div>
+  <div>
+    <label>Signature: </label>
+    <input type="text" th:field="*{signature}">
+  </div>
+  <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
