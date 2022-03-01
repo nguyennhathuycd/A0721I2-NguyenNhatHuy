@@ -1,0 +1,33 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Music</title>
+    <style>
+        .firt_label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>View detail music</h1>
+<p>
+    <a href="/music">Music list</a>
+</p>
+<br>
+<label class="firt_label">Song name: </label>
+<label th:text="${music.name}"></label>
+<br>
+<label class="firt_label">Artist: </label>
+<label th:text="${music.artist}"></label>
+<br>
+<label class="firt_label">Kind: </label>
+<label th:text="${music.kind}"></label>
+<br>
+<label class="firt_label">Path: </label>
+<label th:text="${music.path}"></label>
+<br>
+<iframe width="853" height="480" th:src="${music.path}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
