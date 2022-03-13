@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View blog</title>
+</head>
+<body>
+<h1>View blog</h1>
+<p>
+    <a href="/blogs">Return blog list</a>
+</p>
+<table>
+    <tr>
+        <td>Title:</td>
+        <td th:text="${blog.title}"></td>
+    </tr>
+    <tr>
+        <td>Summary:</td>
+        <td th:text="${blog.summary}"></td>
+    </tr>
+    <tr>
+        <td>Content:</td>
+        <td th:text="${blog.content}"></td>
+    </tr>
+    <tr>
+        <td>Date submitted:</td>
+        <td th:text="${blog.dateSubmitted}"></td>
+    </tr>
+    <tr>
+        <td>Category:</td>
+        <td th:if="${blog.category}" th:text="${blog.category.name}"></td>
+        <td th:unless="${blog.category}" th:text="None"></td>
+    </tr>
+</table>
+</body>
+</html>
