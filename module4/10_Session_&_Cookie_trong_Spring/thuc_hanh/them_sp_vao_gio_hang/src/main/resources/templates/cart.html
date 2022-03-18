@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <p>
     <a href="/shop">Shop</a>
 </p>
 <h1>Your Cart</h1>
+<label th:if="${messenge}" th:text="${messenge}" style="color: red"></label>
 <form th:action="@{/shop}" th:object="${cart}" method="post">
     <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
     <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
     <table border="1">
         <tr>
             <th>Item</th>
+            <th>Image</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>Action</th>
         </tr>
         <tr th:each="product: ${cart.products}">
             <td th:text="${product.getKey().name}"></td>
             <td>
-                <span th:text="${product.getValue()}"></span>
-                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
-                   th:text="${'plus'}"></a>
+                <img th:src="@{${'/images/'+ product.getKey().image}}" width="120"/>
+            </td>
+            <td>
+                <input type="number" th:data-id="${product.getKey().id}" th:value="${product.getValue()}" class="changeQuantity" style="width: 30px" />
             </td>
             <td th:text="${product.getKey().price}"></td>
+            <td>
+                <a th:href="@{/deleteItem/__${product.getKey().id}__}">Delete</a>
+            </td>
         </tr>
         <tr>
             <td>Total</td>
+            <td></td>
             <td></td>
             <td th:text="${cart.countTotalPayment()}"></td>
         </tr>
     </table>
 </form>
 </body>
+<script>
+
+    $('.changeQuantity').click( function () {
+        var id = $(this).data("id");
+        var quantity = $(this).val();
+        location.href="/changeQuantity/"+quantity+ "/" +id;
+    })
+</script>
 </html>

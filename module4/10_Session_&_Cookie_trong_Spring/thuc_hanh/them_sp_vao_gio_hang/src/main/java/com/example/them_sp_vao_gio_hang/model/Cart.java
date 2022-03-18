@@ -68,4 +68,14 @@ public class Cart {
         }
         return totalPayment;
     }
+
+    public void changeQuantity(Product product, Integer quantity) {
+        Map.Entry<Product, Integer> entry = selectItemInCart(product);
+        products.replace(entry.getKey(), quantity);
+    }
+
+    public void deleteItem(Product product) {
+        Map.Entry<Product, Integer> entry = selectItemInCart(product);
+        products.remove(entry.getKey());
+    }
 }

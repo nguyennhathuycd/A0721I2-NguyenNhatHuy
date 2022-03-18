@@ -28,6 +28,34 @@ public class ProductController {
         return modelAndView;
     }
 
+    @GetMapping("/view/{id}")
+    public ModelAndView viewProduct(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView("/viewProduct");
+        modelAndView.addObject("product", iProductService.findById(id).get());
+        return modelAndView;
+    }
+
+    @GetMapping("/changeQuantity/{quantity}/{id}")
+    public ModelAndView changeQuantity(@PathVariable Long id, @PathVariable Integer quantity, @ModelAttribute Cart cart) {
+        if (quantity <= 0 ) {
+            ModelAndView modelAndView = new ModelAndView("/cart");
+            modelAndView.addObject("messenge", "Quantity error.");
+            return modelAndView;
+        } else {
+            cart.changeQuantity(iProductService.findById(id).get(), quantity);
+            ModelAndView modelAndView = new ModelAndView("redirect:/shopping-cart");
+            return modelAndView;
+        }
+    }
+
+    @GetMapping("/deleteItem/{id}")
+    public ModelAndView deleteItem(@PathVariable Long id, @ModelAttribute Cart cart) {
+        cart.deleteItem(iProductService.findById(id).get());
+        ModelAndView modelAndView = new ModelAndView("/cart");
+        modelAndView.addObject("messenge", "Delete item successfully");
+        return modelAndView;
+    }
+
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
         Optional<Product> productOptional = iProductService.findById(id);
