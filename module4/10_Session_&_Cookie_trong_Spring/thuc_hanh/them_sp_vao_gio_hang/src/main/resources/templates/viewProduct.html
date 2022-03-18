@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View product</title>
+</head>
+<body>
+<a href="/shop">Return to shop</a>
+    <h2>View Product detail</h2>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td>
+                <img th:src="@{${'/images/'+ product.image}}" width="120"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td th:text="${product.description}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a></td>
+        </tr>
+    </table>
+</body>
+</html>
