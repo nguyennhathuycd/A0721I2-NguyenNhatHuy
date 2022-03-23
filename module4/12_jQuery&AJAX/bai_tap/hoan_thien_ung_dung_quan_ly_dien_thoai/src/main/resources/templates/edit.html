@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Smartphone</title>
+</head>
+<body>
+<a href="/smartphones/list">Return to list</a>
+<h2>Update Smartphone</h2>
+<th:block>
+    <label th:if="${message}" th:text="${message}" style="color: red"></label>
+</th:block>
+    <form action="/smartphones/update" method="post" th:object="${smartphone}">
+        <table>
+            <tr>
+                <td>
+                    <input th:value="${smartphone.id}" th:field="*{id}" hidden>
+                </td>
+            </tr>
+            <tr>
+                <td>Producer</td>
+                <td>
+                    <input th:value="${smartphone.producer}" th:field="*{producer}">
+                </td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td>
+                    <input th:value="${smartphone.model}" th:field="*{model}">
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input th:value="${smartphone.price}" th:field="*{price}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
