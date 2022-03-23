@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Blog</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var pageNumber = 0;
+            //sư kiện nào thực hiện Ajax
+            $(document).on('click', '.search', function (event) {
+                let search = $('#search').val();
+                if (search == "") {
+                    search = "null";
+                }
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "GET",
+                    //tên API
+                    url: "/blogs/ajax?search=" + search,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        hasSuccess(data);
+                    },
+                });
+                event.preventDefault();
+            })
+
+            $(document).on('click', '.previous', function (event) {
+                alert("pre")
+            })
+
+            $(document).on('click', '.next', function (event) {
+                alert("save")
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "GET",
+                    //tên API
+                    url: "/blogs/ajax?page=" + (pageNumber + 1),
+                    //xử lý khi thành công
+                    success: function (data) {
+                        hasSuccess(data);
+                    }
+                });
+                event.preventDefault();
+            })
+
+            function hasSuccess(data) {
+                let content = '<table border="1"><tr>\n' +
+                    '        <th>Title</th>\n' +
+                    '        <th>Summary</th>\n' +
+                    '        <th>Date submitted</th>\n' +
+                    '        <th>Category</th>\n' +
+                    '        <th>Edit</th>\n' +
+                    '        <th>Delete</th>\n' +
+                    '    </tr>';
+                for (let i = 0; i < data.content.length; i++) {
+                    content += getBlogs(data.content[i]);
+                }
+                content += `</table><div>`;
+
+                var totalPage = data.totalPages;
+                pageNumber = data.pageable.pageNumber;
+                var numLinks = data.size;
+                alert("pagenumber: " + pageNumber + ", total page: " + totalPage)
+
+                if (pageNumber > 0) {
+                    content += `<a href="/blogs?page="` + (pageNumber - 1) + `">Previous</a>`;
+                }
+                content += `<span>` + (pageNumber + 1) + `</span>/<span>` + totalPage + `</span>`;
+                if (pageNumber + 1 < totalPage) {
+                    content += `<button class="next">Next</button>`;
+                }
+                document.getElementById('blogsList').innerHTML = content;
+            }
+
+            function getBlogs(blog) {
+                return `<tr>
+            <td>
+                <a href="/view-blog/` + blog.id + `">${blog.title}</a>
+            </td>
+            <td>${blog.summary}</td>
+            <td>${blog.dateSubmitted}</td>
+            <td>${blog.category.name}</td>
+            <td><a href="/edit-blog/` + blog.id + `">Edit</a></td>
+            <td><a href="/delete-blog/`+ blog.id + `">Delete</a></td>
+        </tr>`;
+            }
+        })
+    </script>
+</head>
+<body>
+<a href="/create-blog">Create new blog</a>
+<h1>Blogs</h1>
+    Search by title:
+    <input id="search" type="text"/>
+    <button class="search">
+        Search
+    </button>
+<th:block th:if="${msg}">
+    <p th:text="${msg}"></p>
+</th:block>
+<form id="blogsList">
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Date submitted</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="blog : ${blogs}">
+            <tr>
+                <td>
+                    <a th:href="@{/view-blog/__${blog.id}__}" th:text="${blog.title}"></a>
+                </td>
+                <td th:text="${blog.summary}"></td>
+                <td th:text="${blog.dateSubmitted}"></td>
+                <td th:if="${blog.category}" th:text="${blog.category.name}"></td>
+                <td th:unless="${blog.category}"></td>
+                <td><a th:href="@{/edit-blog/__${blog.id}__ }">Edit</a></td>
+                <td><a th:href="@{/delete-blog/__${blog.id}__ }">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+    <div>
+        <button class="previous" th:if="${blogs.hasPrevious()}">Previous</button>
+<!--        <a th:href="@{'/blogs'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}">Previous</a>-->
+        <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+        <button class="next" th:if="${blogs.hasNext()}">Next</button>
+<!--        <a th:href="@{'/blogs'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}">Next</a>-->
+    </div>
+</form>
+</body>
+</html>
