@@ -32,7 +32,6 @@ public class BlogController {
 
     @GetMapping("/blogs/ajax")
     public ResponseEntity<Page<Blog>> blogsList(@RequestParam("search") String search, @PageableDefault(size = 2) Pageable pageable) {
-        System.out.println("a2");
         Page<Blog> blogs;
         if (search.equals("null")) {
             blogs = blogService.findAllByOrderByDateSubmittedDesc(pageable);
@@ -43,7 +42,7 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public ModelAndView listBlogs(@PageableDefault(size = 5) Pageable pageable) {
+    public ModelAndView listBlogs(@PageableDefault(size = 2) Pageable pageable) {
         Page<Blog> blogs;
         blogs = blogService.findAllByOrderByDateSubmittedDesc(pageable);
         ModelAndView modelAndView = new ModelAndView("/blog/list");
