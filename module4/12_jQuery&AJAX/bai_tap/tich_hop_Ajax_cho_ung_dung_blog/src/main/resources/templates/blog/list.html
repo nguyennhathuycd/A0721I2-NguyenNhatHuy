@@ -5,8 +5,8 @@
     <title>List Blog</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
+        var pageNumber = 0;
         $(document).ready(function () {
-            var pageNumber = 0;
             //sư kiện nào thực hiện Ajax
             $(document).on('click', '.search', function (event) {
                 let search = $('#search').val();
@@ -30,11 +30,7 @@
             })
 
             $(document).on('click', '.previous', function (event) {
-                alert("pre")
-            })
-
-            $(document).on('click', '.next', function (event) {
-                alert("next")
+                let search = $('#search').val();
                 $.ajax({
                     headers: {
                         'Accept': 'application/json',
@@ -42,7 +38,25 @@
                     },
                     type: "GET",
                     //tên API
-                    url: "/blogs/ajax?page=" + (pageNumber + 1),
+                    url: "/blogs/ajax?page=" + (pageNumber - 1) + "&search=" + search,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        hasSuccess(data);
+                    }
+                });
+                event.preventDefault();
+            })
+
+            $(document).on('click', '.next', function (event) {
+                let search = $('#search').val();
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "GET",
+                    //tên API
+                    url: "/blogs/ajax?page=" + (pageNumber + 1) + "&search=" + search,
                     //xử lý khi thành công
                     success: function (data) {
                         hasSuccess(data);
@@ -68,10 +82,8 @@
                 var totalPage = data.totalPages;
                 pageNumber = data.pageable.pageNumber;
                 var numLinks = data.size;
-                alert("pagenumber: " + pageNumber + ", total page: " + totalPage)
-
                 if (pageNumber > 0) {
-                    content += `<a href="/blogs?page="` + (pageNumber - 1) + `">Previous</a>`;
+                    content += `<button class="previous">Previous</button>`;
                 }
                 content += `<span>` + (pageNumber + 1) + `</span>/<span>` + totalPage + `</span>`;
                 if (pageNumber + 1 < totalPage) {
@@ -99,7 +111,7 @@
 <a href="/create-blog">Create new blog</a>
 <h1>Blogs</h1>
     Search by title:
-    <input id="search" type="text"/>
+    <input id="search" name="search" type="text"/>
     <button class="search">
         Search
     </button>

@@ -31,12 +31,13 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/ajax")
-    public ResponseEntity<Page<Blog>> blogsList(@RequestParam("search") String search, @PageableDefault(size = 2) Pageable pageable) {
+    public ResponseEntity<Page<Blog>> blogsList(@RequestParam("search") Optional<String> search, @PageableDefault(size = 2) Pageable pageable) {
+        System.out.println("im here");
         Page<Blog> blogs;
-        if (search.equals("null")) {
+        if (!search.isPresent()) {
             blogs = blogService.findAllByOrderByDateSubmittedDesc(pageable);
         } else {
-            blogs = blogService.findAllByTitleContainingOrderByDateSubmittedDesc(search, pageable);
+            blogs = blogService.findAllByTitleContainingOrderByDateSubmittedDesc(search.get(), pageable);
         }
         return new ResponseEntity<>(blogs, HttpStatus.OK);
     }
