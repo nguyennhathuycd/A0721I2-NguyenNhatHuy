@@ -1,0 +1,34 @@
+<h2>Person profile</h2>
+
+<label>
+  Id:
+  <input type="text" [(ngModel)]="student.id">
+</label>
+<br >
+
+<label>
+  Name:
+  <input type="text" [(ngModel)]="student.name">
+</label>
+<br >
+
+<label>
+  Age:
+  <input type="text" [(ngModel)]="student.age">
+</label>
+<br >
+
+<label>
+  Mark:
+  <input type="number" min="0" max="10" [(ngModel)]="student.mark" >
+</label>
+<br >
+
+<label>
+  Image:
+  <input type="url" [(ngModel)]="student.avatar">
+</label>
+
+<div class="col-1">
+  <img [src]="student.avatar" style="max-width: 100%">
+</div>
