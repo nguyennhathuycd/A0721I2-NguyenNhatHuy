@@ -1,34 +1,24 @@
-<h2>Person profile</h2>
-
-<label>
-  Id:
-  <input type="text" [(ngModel)]="student.id">
-</label>
-<br >
-
-<label>
-  Name:
-  <input type="text" [(ngModel)]="student.name">
-</label>
-<br >
-
-<label>
-  Age:
-  <input type="text" [(ngModel)]="student.age">
-</label>
-<br >
-
-<label>
-  Mark:
-  <input type="number" min="0" max="10" [(ngModel)]="student.mark" >
-</label>
-<br >
-
-<label>
-  Image:
-  <input type="url" [(ngModel)]="student.avatar">
-</label>
-
-<div class="col-1">
-  <img [src]="student.avatar" style="max-width: 100%">
-</div>
+<table class="table table-striped table-bordered">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Mark</th>
+    <th>Check mark</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList">
+        <td>{{student.id}}</td>
+        <td>{{student.name | titlecase}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.mark}}</td>
+      <td class="text-success" *ngIf="student.mark >= 5">Pass</td>
+      <td class="text-danger" *ngIf="student.mark < 5">Fail</td>
+      <td>
+        <a class="btn btn-info m-2">Detail</a>
+        <a class="btn btn-warning m-2">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
