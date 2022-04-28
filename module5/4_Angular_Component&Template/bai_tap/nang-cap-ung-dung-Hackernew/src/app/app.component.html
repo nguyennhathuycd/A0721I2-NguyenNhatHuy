@@ -1,0 +1,11 @@
+<app-navbar (pageChange)="pageChange($event)"></app-navbar>
+<div *ngIf="page == 'home' || page == null" style="height: 500px;">
+  <h2>Home page</h2>
+</div>
+<div *ngIf="page == 'article'" style="height: 500px;">
+  <app-article></app-article>
+</div>
+<div *ngIf="page == 'login'" style="height: 500px;">
+  <h2>Login page</h2>
+</div>
+<app-footer></app-footer>
