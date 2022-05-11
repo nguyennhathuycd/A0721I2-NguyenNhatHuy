@@ -26,17 +26,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/codegym/A0721I2-NguyenNhatHuy/module5/2_Typescript/fibonacci&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\codegym\\A0721I2-NguyenNhatHuy\\module5\\2_Typescript\\fibonacci\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/codegym/A0721I2-NguyenNhatHuy/module5/7_Service_va_Router/angular-timelines-app",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\codegym\\A0721I2-NguyenNhatHuy\\module5\\2_Typescript\\fibonacci\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codegym\A0721I2-NguyenNhatHuy\module5\2_Typescript\fibonacci" />
@@ -52,7 +52,8 @@
       <updated>1651682629160</updated>
       <workItem from="1651682630592" duration="2778000" />
       <workItem from="1651834725484" duration="218000" />
-      <workItem from="1651836002768" duration="1407000" />
+      <workItem from="1651836002768" duration="2295000" />
+      <workItem from="1652094193383" duration="50000" />
     </task>
     <servers />
   </component>
