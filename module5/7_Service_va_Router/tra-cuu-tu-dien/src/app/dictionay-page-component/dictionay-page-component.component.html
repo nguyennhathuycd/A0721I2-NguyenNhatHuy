@@ -1,0 +1,15 @@
+<h3>All Words</h3>
+<table>
+  <thead>
+  <tr>
+    <th>English</th>
+    <th>Vietnamese</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let w of words; index as i" >
+    <td>{{w.word}}</td>
+    <td><a [routerLink]="['/translate', w.word]">Translate</a></td>
+  </tr>
+  </tbody>
+</table>

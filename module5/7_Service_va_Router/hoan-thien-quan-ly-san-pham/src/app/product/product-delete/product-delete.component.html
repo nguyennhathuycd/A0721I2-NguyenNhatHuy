@@ -1,0 +1,15 @@
+<form [formGroup]="deleteForm" (ngSubmit)="onSubmit()">
+  <h3>Delete product</h3>
+  <label>Id: </label>
+  <label>{{product.id}}</label>
+  <br>
+  <label>Name: </label>
+  <label>{{product.name}}</label>
+  <br>
+  <label>Price: </label>
+  <label>{{product.price}}</label>
+  <br>
+  <label>Description: </label>
+  <label>{{product.description}}</label>
+  <input type="submit" value="delete">
+</form>
